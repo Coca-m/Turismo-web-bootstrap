@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Qué pasa en Jujuy? - Noticias</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <header class="header">
+  <div class="logo">
+    <h1>Turismo Jujuy</h1>
+  </div>
+
+  <nav class="navbar" aria-label="Menú principal">
+  <ul class="menu">
+    <li><a href="index.html">Inicio</a></li>
+
+    <li class="dropdown">
+      <a href="destinos.html">Destinos</a>
+      <div class="mega-menu">
+        <div class="mega-columna">
+          <h3>Lugares</h3>
+          <a href="destinos.html">Cerro de los 7 Colores</a>
+          <a href="destinos.html">Pucará de Tilcara</a>
+          <a href="destinos.html">Salinas Grandes</a>
+          <a href="destinos.html">Museo del Cabildo</a>
+          <a href="destinos.html">Valle de la Luna</a>
+          <a href="destinos.html">Iglesia de Uquía</a>
+        </div>
+        <div class="mega-columna">
+          <h3>Categorías</h3>
+          <a href="destinos.html">Naturaleza</a>
+          <a href="destinos.html">Cultural</a>
+          <a href="destinos.html">Gastronómico</a>
+        </div>
+        <div class="mega-columna">
+          <h3>Experiencias</h3>
+          <a href="destinos.html">Excursiones</a>
+          <a href="destinos.html">Trekking</a>
+          <a href="destinos.html">Fotografía</a>
+          <a href="destinos.html">Gastronomía Local</a>
+        </div>
+      </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="agencias.html">Agencias</a>
+      <div class="mega-menu">
+        <div class="mega-columna">
+          <h3>Servicios</h3>
+          <a href="agencias.html">Paquetes turísticos</a>
+          <a href="agencias.html">Traslados</a>
+          <a href="agencias.html">Hospedaje</a>
+          <a href="agencias.html">Guías locales</a>
+        </div>
+        <div class="mega-columna">
+          <h3>Atención</h3>
+          <a href="agencias.html">Asesoramiento</a>
+          <a href="agencias.html">Promociones</a>
+          <a href="agencias.html">Viajes grupales</a>
+          <a href="agencias.html">Turismo personalizado</a>
+        </div>
+        <div class="mega-columna">
+          <h3>Consultas</h3>
+          <a href="contacto.html">Contactar agencia</a>
+          <a href="contacto.html">Reservar</a>
+          <a href="contacto.html">Solicitar info</a>
+          <a href="contacto.html">Atención online</a>
+        </div>
+      </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="precios.html">Precios</a>
+      <div class="mega-menu">
+        <div class="mega-columna">
+          <h3>Planes</h3>
+          <a href="precios.html">Económico</a>
+          <a href="precios.html">Estándar</a>
+          <a href="precios.html">Premium</a>
+          <a href="precios.html">Familiar</a>
+        </div>
+        <div class="mega-columna">
+          <h3>Incluye</h3>
+          <a href="precios.html">Hospedaje</a>
+          <a href="precios.html">Desayuno</a>
+          <a href="precios.html">Excursiones</a>
+          <a href="precios.html">Transporte</a>
+        </div>
+        <div class="mega-columna">
+          <h3>Comparar</h3>
+          <a href="precios.html">Ver tabla</a>
+          <a href="precios.html">Ofertas</a>
+          <a href="precios.html">Promociones</a>
+          <a href="precios.html">Temporada alta</a>
+        </div>
+      </div>
+    </li>
+
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+  </ul>
+</nav>
+</header>
+
+    <main class="blog-revista">
+        <header class="blog-header">
+            <h1 class="diario-logo">¿Qué pasa en Jujuy?</h1>
+            <div class="diario-fecha" id="fecha-actual"></div>
+        </header>
+
+        <div class="filter-section">
+            <input type="radio" name="f" id="all" checked>
+            <input type="radio" name="f" id="cultura">
+            <input type="radio" name="f" id="aventura">
+            <input type="radio" name="f" id="gastronomia">
+
+            <div class="filter-labels">
+                <label for="all">TODO</label>
+                <label for="cultura">Cultura</label>
+                <label for="aventura">Aventura</label>
+                <label for="gastronomia">Gastronomía</label>
+            </div>
+
+            <section class="revista-grid">
+               <article class="principal art-card cultura">
+              <div style="width: 100%; height: 100%; display: flex; flex-direction: column;">
+              <div class="art-img" style="background-image: url('img/blog/tradiciones.jpg'); width: 100%;"></div>
+            <div class="art-body" style="width: 100%;">
+            <span class="tag">Cultura</span>
+            <h2>El renacer de la Puna: Tradiciones milenarias</h2>
+            <p>Una mirada profunda a los rituales que definen nuestra identidad en lo más alto de Jujuy.</p>
+            <span class="autor">Por: Julián M.</span>
+          </div>
+      </div>
+  </article>
+
+                <article class="art-card aventura reveal">
+                    <div class="art-img" style="background-image: url('img/blog/yungas.jpg')"></div>
+                    <div class="art-body">
+                        <span class="tag">Aventura</span>
+                        <h3>Trekking en las Nubes</h3>
+                        <p>Explorando los senderos menos conocidos de las Yungas jujeñas, un viaje entre la selva y el cielo.</p>
+                    </div>
+                </article>
+
+                <article class="art-card cultura reveal">
+                    <div class="art-img" style="background-image: url('img/blog/pena.jpg')"></div>
+                    <div class="art-body">
+                        <span class="tag">Cultura</span>
+                        <h3>Noches de Peñas en Tilcara</h3>
+                        <p>Donde la música andina y el vino de altura se encuentran bajo el cielo estrellado de la Quebrada.</p>
+                    </div>
+                </article>
+
+                <article class="art-card gastronomia reveal">
+                    <div class="art-img" style="background-image: url('img/blog/bodega.jpg')"></div>
+                    <div class="art-body">
+                        <span class="tag">Gastronomía</span>
+                        <h3>El auge del vino de altura</h3>
+                        <p>Bodegas locales ganan terreno en el mercado mundial con uvas cosechadas a más de 2500 msnm.</p>
+                    </div>
+                </article>
+
+                <article class="art-card cultura reveal">
+                    <div class="art-img" style="background-image: url('img/blog/Casabindo.jpg')"></div>
+                    <div class="art-body">
+                        <span class="tag">Cultura</span>
+                        <h3>Inauguran museo en Casabindo</h3>
+                        <p>La tecnología llega a la Puna para contar la historia del Toreo de la Vincha de forma inmersiva.</p>
+                    </div>
+                </article>
+
+                <article class="art-card gastronomia reveal">
+                    <div class="art-img" style="background-image: url('img/blog/humita.jpg')"></div>
+                    <div class="art-body">
+                        <span class="tag">Gastronomía</span>
+                        <h3>El secreto de la Humita Jujeña</h3>
+                        <p>Productores locales revelan las técnicas ancestrales para lograr el sabor único del Valle.</p>
+                    </div>
+                </article>
+            </section>
+        </div>
+
+        <section class="comentarios-box">
+            <h3>Comunidad Jujeña</h3>
+            <div class="comentario reveal"><div class="avatar-css"></div><div class="comentario-content"><strong>Marcos Torres</strong><p>¡Increíble artículo! Me dieron ganas de volver a la Puna.</p></div></div>
+            <div class="comentario reveal"><div class="avatar-css avatar-c2"></div><div class="comentario-content"><strong>Lucía Méndez</strong><p>El trekking en las Yungas es una experiencia que todos deberían hacer una vez.</p></div></div>
+            <div class="comentario reveal"><div class="avatar-css avatar-c3"></div><div class="comentario-content"><strong>Roberto S.</strong><p>¿Alguien sabe si las peñas en Tilcara abren los lunes?</p></div></div>
+            <div class="comentario reveal"><div class="avatar-css avatar-c4"></div><div class="comentario-content"><strong>Martina Díaz</strong><p>Los vinos de Jujuy son, por lejos, mis favoritos del país.</p></div></div>
+            <div class="comentario reveal"><div class="avatar-css avatar-c5"></div><div class="comentario-content"><strong>Andrés F.</strong><p>¡Excelente información! Muy completo el blog.</p></div></div>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById('fecha-actual').innerText = new Date().toLocaleDateString('es-AR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

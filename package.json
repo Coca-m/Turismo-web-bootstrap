@@ -1,0 +1,16 @@
+{
+  "name": "turismo-web-bootstrap",
+  "version": "1.0.0",
+  "description": "🌍 Turismo Jujuy: Proyecto de Desarrollo Web Completo\r 🚀 Descripción General\r Este proyecto es una plataforma web integral dedicada a la promoción turística de la provincia de Jujuy. El sitio ha sido diseñado bajo una arquitectura de \"Multi-Page Application\" (MPA), asegurando que cada sección cumpla una función específica dentro del funnel de conversión de un turista: desde la inspiración hasta el contacto.",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "jquery": "^4.0.0"
+  }
+}

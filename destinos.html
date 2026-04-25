@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinos - Turismo Jujuy</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">
+    <h1>Turismo Jujuy</h1>
+  </div>
+
+  <nav class="navbar" aria-label="Menú principal">
+  <ul class="menu">
+    <li><a href="index.html">Inicio</a></li>
+
+    <li class="dropdown">
+      <a href="destinos.html">Destinos</a>
+      <div class="mega-menu">
+        <div class="mega-columna">
+          <h3>Lugares</h3>
+          <a href="destinos.html">Cerro de los 7 Colores</a>
+          <a href="destinos.html">Pucará de Tilcara</a>
+          <a href="destinos.html">Salinas Grandes</a>
+          <a href="destinos.html">Museo del Cabildo</a>
+          <a href="destinos.html">Valle de la Luna</a>
+          <a href="destinos.html">Iglesia de Uquía</a>
+        </div>
+        <div class="mega-columna">
+          <h3>Categorías</h3>
+          <a href="destinos.html">Naturaleza</a>
+          <a href="destinos.html">Cultural</a>
+          <a href="destinos.html">Gastronómico</a>
+        </div>
+        <div class="mega-columna">
+          <h3>Experiencias</h3>
+          <a href="destinos.html">Excursiones</a>
+          <a href="destinos.html">Trekking</a>
+          <a href="destinos.html">Fotografía</a>
+          <a href="destinos.html">Gastronomía Local</a>
+        </div>
+      </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="agencias.html">Agencias</a>
+      <div class="mega-menu">
+        <div class="mega-columna">
+          <h3>Servicios</h3>
+          <a href="agencias.html">Paquetes turísticos</a>
+          <a href="agencias.html">Traslados</a>
+          <a href="agencias.html">Hospedaje</a>
+          <a href="agencias.html">Guías locales</a>
+        </div>
+        <div class="mega-columna">
+          <h3>Atención</h3>
+          <a href="agencias.html">Asesoramiento</a>
+          <a href="agencias.html">Promociones</a>
+          <a href="agencias.html">Viajes grupales</a>
+          <a href="agencias.html">Turismo personalizado</a>
+        </div>
+        <div class="mega-columna">
+          <h3>Consultas</h3>
+          <a href="contacto.html">Contactar agencia</a>
+          <a href="contacto.html">Reservar</a>
+          <a href="contacto.html">Solicitar info</a>
+          <a href="contacto.html">Atención online</a>
+        </div>
+      </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="precios.html">Precios</a>
+      <div class="mega-menu">
+        <div class="mega-columna">
+          <h3>Planes</h3>
+          <a href="precios.html">Económico</a>
+          <a href="precios.html">Estándar</a>
+          <a href="precios.html">Premium</a>
+          <a href="precios.html">Familiar</a>
+        </div>
+        <div class="mega-columna">
+          <h3>Incluye</h3>
+          <a href="precios.html">Hospedaje</a>
+          <a href="precios.html">Desayuno</a>
+          <a href="precios.html">Excursiones</a>
+          <a href="precios.html">Transporte</a>
+        </div>
+        <div class="mega-columna">
+          <h3>Comparar</h3>
+          <a href="precios.html">Ver tabla</a>
+          <a href="precios.html">Ofertas</a>
+          <a href="precios.html">Promociones</a>
+          <a href="precios.html">Temporada alta</a>
+        </div>
+      </div>
+    </li>
+
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+  </ul>
+</nav>
+</header>
+
+    <main class="destinos-page">
+        <section class="filtros-container">
+            
+            <input type="radio" name="filtro" id="todos" checked>
+            <input type="radio" name="filtro" id="cultural">
+            <input type="radio" name="filtro" id="naturaleza">
+            <input type="radio" name="filtro" id="gastronomico">
+
+            <div class="botones-filtros">
+                <label for="todos" class="btn-filtro">Todos</label>
+                <label for="cultural" class="btn-filtro">Cultural</label>
+                <label for="naturaleza" class="btn-filtro">Naturaleza</label>
+                <label for="gastronomico" class="btn-filtro">Gastronómico</label>
+            </div>
+
+            <div class="galeria-masonry">
+    <article class="item-destinos cat-naturaleza">
+        <img src="img/destinos/7-colores.jpg" alt="Purmamarca">
+        <div class="overlay-destinos">
+            <h3>Cerro de los 7 Colores</h3>
+            <p>El corazón de la Quebrada de Humahuaca.</p>
+        </div>
+    </article>
+
+    <article class="item-destinos cat-naturaleza">
+        <img src="img/destinos/salinas.jpg" alt="Salinas Grandes">
+        <div class="overlay-destinos">
+            <h3>Salinas Grandes</h3>
+            <p>Un desierto blanco a 3.400 metros de altura.</p>
+        </div>
+    </article>
+
+    <article class="item-destinos cat-naturaleza">
+        <img src="img/destinos/v-luna.jpg" alt="Valle de la Luna">
+        <div class="overlay-destinos">
+            <h3>Valle de la Luna</h3>
+            <p>Paisajes de otro planeta en Cusi Cusi.</p>
+        </div>
+    </article>
+
+    <article class="item-destinos cat-cultural">
+        <img src="img/destinos/pucara.jpg" alt="Pucará de Tilcara">
+        <div class="overlay-destinos">
+            <h3>Pucará de Tilcara</h3>
+            <p>Fortaleza milenaria de los antiguos pobladores.</p>
+        </div>
+    </article>
+
+    <article class="item-destinos cat-cultural">
+        <img src="img/destinos/uquia.jpg" alt="Iglesia de Uquía">
+        <div class="overlay-destinos">
+            <h3>Iglesia de Uquía</h3>
+            <p>Hogar de los famosos Ángeles Arcabuceros.</p>
+        </div>
+    </article>
+
+    <article class="item-destinos cat-cultural">
+        <img src="img/destinos/cabildo.jpg" alt="Cabildo de Jujuy">
+        <div class="overlay-destinos">
+            <h3>Cabildo Histórico</h3>
+            <p>Reliquia colonial en el centro de San Salvador.</p>
+        </div>
+    </article>
+
+    <article class="item-destinos cat-gastronomico">
+        <img src="img/destinos/humitas.jpg" alt="Humitas">
+        <div class="overlay-destinos">
+            <h3>Humitas Regionales</h3>
+            <p>El sabor auténtico del maíz andino.</p>
+        </div>
+    </article>
+
+    <article class="item-destinos cat-gastronomico">
+        <img src="img/destinos/api.jpg" alt="Api">
+        <div class="overlay-destinos">
+            <h3>Api con Buñuelos</h3>
+            <p>La merienda tradicional de los inviernos jujeños.</p>
+        </div>
+    </article>
+
+    <article class="item-destinos cat-gastronomico">
+        <img src="img/destinos/empanadas.jpg" alt="Empanadas">
+        <div class="overlay-destinos">
+            <h3>Empanadas Jujeñas</h3>
+            <p>Famosas por su sabor único y jugo picante.</p>
+        </div>
+    </article>
+</div>
+            <div class="contenedor-info">
+                <article class="info-card cat-naturaleza">
+    <div class="info-texto">
+        <h3>Cerro de los 7 Colores (Purmamarca)</h3>
+        <p>Una maravilla geológica originada hace 75 millones de años. Se recomienda recorrer el Paseo de los Colorados al amanecer para apreciar mejor sus estratos de sedimentos.</p>
+        <ul>
+            <li><strong>Altitud:</strong> 2.300 msnm</li>
+            <li><strong>Actividad:</strong> Fotografía y senderismo leve.</li>
+        </ul>
+    </div>
+</article>
+
+<article class="info-card cat-naturaleza">
+    <div class="info-texto">
+        <h3>Salinas Grandes</h3>
+        <p>El tercer salar más grande de Sudamérica. Un espejo blanco infinito donde se extrae sal de forma artesanal. Es fundamental llevar anteojos de sol y agua.</p>
+        <ul>
+            <li><strong>Acceso:</strong> Cuesta del Lipán.</li>
+            <li><strong>Clima:</strong> Extremo, mucha radiación.</li>
+        </ul>
+    </div>
+</article>
+
+<article class="info-card cat-naturaleza">
+    <div class="info-texto">
+        <h3>Valle de la Luna (Cusi Cusi)</h3>
+        <p>Ubicado en la Puna, presenta formaciones de arcilla roja y gris que parecen un paisaje lunar. Es uno de los tesoros menos conocidos y más impactantes de Jujuy.</p>
+        <ul>
+            <li><strong>Ubicación:</strong> Ruta 40, cerca de Cusi Cusi.</li>
+            <li><strong>Recomendación:</strong> Camioneta 4x4.</li>
+        </ul>
+    </div>
+</article>
+
+<article class="info-card cat-cultural">
+    <div class="info-texto">
+        <h3>Pucará de Tilcara</h3>
+        <p>Fortaleza defensiva de los Omaguacas. Permite observar la organización social y arquitectónica de los pueblos andinos antes de la llegada de los Incas.</p>
+        <ul>
+            <li><strong>Visita:</strong> Incluye jardín botánico de altura.</li>
+            <li><strong>Importancia:</strong> Monumento Histórico Nacional.</li>
+        </ul>
+    </div>
+</article>
+
+<article class="info-card cat-cultural">
+    <div class="info-texto">
+        <h3>Iglesia de San Francisco de Paula (Uquía)</h3>
+        <p>Famosa por albergar los óleos de los Ángeles Arcabuceros, traídos desde el Cusco. Es un testimonio único del arte barroco andino del siglo XVII.</p>
+        <ul>
+            <li><strong>Dato:</strong> Los ángeles visten como soldados españoles de la época.</li>
+            <li><strong>Entrada:</strong> Gratuita (se pide colaboración).</li>
+        </ul>
+    </div>
+</article>
+
+<article class="info-card cat-cultural">
+    <div class="info-texto">
+        <h3>Cabildo de San Salvador</h3>
+        <p>Ubicado frente a la plaza Belgrano, este edificio colonial es el centro administrativo histórico. Aquí Belgrano presentó la Bandera de la Libertad Civil.</p>
+        <ul>
+            <li><strong>Atractivo:</strong> Recova histórica y museos internos.</li>
+            <li><strong>Ubicación:</strong> Capital de la provincia.</li>
+        </ul>
+    </div>
+</article>
+
+<article class="info-card cat-gastronomico">
+    <div class="info-texto">
+        <h3>Humitas en Chala</h3>
+        <p>Preparadas con choclo fresco rallado, queso y albahaca. Se cocinan al vapor envueltas en las propias hojas (chalas) del maíz. Pueden ser dulces o saladas.</p>
+        <ul>
+            <li><strong>Mejor época:</strong> Enero a Marzo (temporada de choclo).</li>
+            <li><strong>Maridaje:</strong> Vino Torrontés jujeño.</li>
+        </ul>
+    </div>
+</article>
+
+<article class="info-card cat-gastronomico">
+    <div class="info-texto">
+        <h3>Api con Buñuelos</h3>
+        <p>El Api es una bebida espesa hecha de maíz morado, canela y clavo de olor. Se sirve caliente y es la pareja inseparable de los buñuelos con miel de caña.</p>
+        <ul>
+            <li><strong>Dónde probarlo:</strong> El Buñuelódromo de El Carmen.</li>
+            <li><strong>Sensación:</strong> Dulce, especiado y reconfortante.</li>
+        </ul>
+    </div>
+</article>
+
+<article class="info-card cat-gastronomico">
+    <div class="info-texto">
+        <h3>Empanadas Jujeñas</h3>
+        <p>Se caracterizan por llevar carne cortada a cuchillo, papa picada fina y cebolla de verdeo. A diferencia de otras provincias, se sirven con salsa picante (llajua).</p>
+        <ul>
+            <li><strong>Ingrediente clave:</strong> Grasa de pella y comino andino.</li>
+            <li><strong>Variedad:</strong> También hay de carne de llama o charqui.</li>
+        </ul>
+    </div>
+</article>
+            </div>
+
+            <div class="tabla-contenedor">
+        <table class="tabla-precios">
+        <thead>
+            <tr>
+                <th>Excursión / Servicio</th>
+                <th>Destino Relacionado</th>
+                <th>Precio (ARS)</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+    <tr class="cat-naturaleza">
+        <td>Safari Fotográfico</td>
+        <td>Salinas Grandes</td>
+        <td>$45.000</td>
+        <td><span class="badge disponible">Disponible</span></td>
+    </tr>
+    <tr class="cat-naturaleza">
+        <td>Trekking de los Colorados</td>
+        <td>Purmamarca / Valle Luna</td>
+        <td>$18.000</td>
+        <td><span class="badge disponible">Disponible</span></td>
+    </tr>
+
+    <tr class="cat-cultural">
+        <td>Tour Arqueológico</td>
+        <td>Pucará de Tilcara</td>
+        <td>$20.000</td>
+        <td><span class="badge disponible">Disponible</span></td>
+    </tr>
+    <tr class="cat-cultural">
+        <td>Casco Histórico y Cabildo</td>
+        <td>San Salvador de Jujuy</td>
+        <td>$12.500</td>
+        <td><span class="badge disponible">Disponible</span></td>
+    </tr>
+    <tr class="cat-cultural">
+        <td>Circuito Ángeles Arcabuceros</td>
+        <td>Iglesia de Uquía</td>
+        <td>$25.000</td>
+        <td><span class="badge disponible">Disponible</span></td>
+    </tr>
+
+    <tr class="cat-gastronomico">
+        <td>Clase de Cocina Andina</td>
+        <td>Humitas y Empanadas</td>
+        <td>$30.000</td>
+        <td><span class="badge disponible">Disponible</span></td>
+    </tr>
+    <tr class="cat-gastronomico">
+        <td>Ruta del Buñuelo</td>
+        <td>El Carmen / Api</td>
+        <td>$12.000</td>
+        <td><span class="badge disponible">Disponible</span></td>
+    </tr>
+</tbody>
+    </table>
+</div>
+
+        </section>
+    </main>
+
+</body>
+</html>
