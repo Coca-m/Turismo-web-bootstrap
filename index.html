@@ -1,273 +1,360 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Turismo Jujuy</title>
-  <link rel="stylesheet" href="css/estilos.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turismo Jujuy - Bootstrap & jQuery</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
 
-<header class="header">
-  <div class="logo">
-    <h1>Turismo Jujuy</h1>
-  </div>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <i class="bi bi-mountain-fill me-2"></i> Turismo Jujuy
+      </a>
 
-  <nav class="navbar" aria-label="Menú principal">
-  <ul class="menu">
-    <li><a href="index.html">Inicio</a></li>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuTurismo" aria-controls="menuTurismo" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <li class="dropdown">
-      <a href="destinos.html">Destinos</a>
-      <div class="mega-menu">
-        <div class="mega-columna">
-          <h3>Lugares</h3>
-          <a href="destinos.html">Cerro de los 7 Colores</a>
-          <a href="destinos.html">Pucará de Tilcara</a>
-          <a href="destinos.html">Salinas Grandes</a>
-          <a href="destinos.html">Museo del Cabildo</a>
-          <a href="destinos.html">Valle de la Luna</a>
-          <a href="destinos.html">Iglesia de Uquía</a>
-        </div>
-        <div class="mega-columna">
-          <h3>Categorías</h3>
-          <a href="destinos.html">Naturaleza</a>
-          <a href="destinos.html">Cultural</a>
-          <a href="destinos.html">Gastronómico</a>
-        </div>
-        <div class="mega-columna">
-          <h3>Experiencias</h3>
-          <a href="destinos.html">Excursiones</a>
-          <a href="destinos.html">Trekking</a>
-          <a href="destinos.html">Fotografía</a>
-          <a href="destinos.html">Gastronomía Local</a>
-        </div>
+      <div class="collapse navbar-collapse" id="menuTurismo">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"><i class="bi bi-house-door me-1"></i>Inicio</a>
+          </li>
+
+          <li class="nav-item dropdown dropdown-mega position-static">
+            <a class="nav-link dropdown-toggle" href="#" id="dropDestinos" role="button" data-bs-toggle="dropdown">
+              <i class="bi bi-compass me-1"></i> Destinos
+            </a>
+            <div class="dropdown-menu w-100 shadow border-0 p-4">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h6 class="fw-bold text-primary">Lugares</h6>
+                    <a class="dropdown-item" href="destinos.html">Cerro de los 7 Colores</a>
+                    <a class="dropdown-item" href="destinos.html">Pucará de Tilcara</a>
+                    <a class="dropdown-item" href="destinos.html">Salinas Grandes</a>
+                    <a class="dropdown-item" href="destinos.html">Museo del Cabildo</a>
+                    <a class="dropdown-item" href="destinos.html">Valle de la Luna</a>
+                    <a class="dropdown-item" href="destinos.html">Iglesia de Uquía</a>
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="fw-bold text-primary">Categorías</h6>
+                    <a class="dropdown-item" href="destinos.html">Naturaleza</a>
+                    <a class="dropdown-item" href="destinos.html">Cultural</a>
+                    <a class="dropdown-item" href="destinos.html">Gastronómico</a>
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="fw-bold text-primary">Experiencias</h6>
+                    <a class="dropdown-item" href="destinos.html">Excursiones</a>
+                    <a class="dropdown-item" href="destinos.html">Trekking</a>
+                    <a class="dropdown-item" href="destinos.html">Fotografía</a>
+                    <a class="dropdown-item" href="destinos.html">Gastronomía Local</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown dropdown-mega position-static">
+            <a class="nav-link dropdown-toggle" href="#" id="dropAgencias" role="button" data-bs-toggle="dropdown">
+              <i class="bi bi-briefcase me-1"></i> Agencias
+            </a>
+            <div class="dropdown-menu w-100 shadow border-0 p-4">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h6 class="fw-bold text-primary">Servicios</h6>
+                    <a class="dropdown-item" href="agencias.html">Paquetes turísticos</a>
+                    <a class="dropdown-item" href="agencias.html">Traslados</a>
+                    <a class="dropdown-item" href="agencias.html">Hospedaje</a>
+                    <a class="dropdown-item" href="agencias.html">Guías locales</a>
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="fw-bold text-primary">Atención</h6>
+                    <a class="dropdown-item" href="agencias.html">Asesoramiento</a>
+                    <a class="dropdown-item" href="agencias.html">Promociones</a>
+                    <a class="dropdown-item" href="agencias.html">Viajes grupales</a>
+                    <a class="dropdown-item" href="agencias.html">Turismo personalizado</a>
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="fw-bold text-primary">Consultas</h6>
+                    <a class="dropdown-item" href="contacto.html">Contactar agencia</a>
+                    <a class="dropdown-item" href="contacto.html">Reservar</a>
+                    <a class="dropdown-item" href="contacto.html">Solicitar info</a>
+                    <a class="dropdown-item" href="contacto.html">Atención online</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown dropdown-mega position-static">
+            <a class="nav-link dropdown-toggle" href="#" id="dropPrecios" role="button" data-bs-toggle="dropdown">
+              <i class="bi bi-cash-stack me-1"></i> Precios
+            </a>
+            <div class="dropdown-menu w-100 shadow border-0 p-4">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h6 class="fw-bold text-primary">Planes</h6>
+                    <a class="dropdown-item" href="precios.html">Económico</a>
+                    <a class="dropdown-item" href="precios.html">Estándar</a>
+                    <a class="dropdown-item" href="precios.html">Premium</a>
+                    <a class="dropdown-item" href="precios.html">Familiar</a>
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="fw-bold text-primary">Incluye</h6>
+                    <a class="dropdown-item" href="precios.html">Hospedaje</a>
+                    <a class="dropdown-item" href="precios.html">Desayuno</a>
+                    <a class="dropdown-item" href="precios.html">Excursiones</a>
+                    <a class="dropdown-item" href="precios.html">Transporte</a>
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="fw-bold text-primary">Comparar</h6>
+                    <a class="dropdown-item" href="precios.html">Ver tabla</a>
+                    <a class="dropdown-item" href="precios.html">Ofertas</a>
+                    <a class="dropdown-item" href="precios.html">Promociones</a>
+                    <a class="dropdown-item" href="precios.html">Temporada alta</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="blog.html"><i class="bi bi-newspaper me-1"></i> Blog</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="contacto.html"><i class="bi bi-telephone me-1"></i> Contacto</a>
+          </li>
+        </ul>
       </div>
-    </li>
-
-    <li class="dropdown">
-      <a href="agencias.html">Agencias</a>
-      <div class="mega-menu">
-        <div class="mega-columna">
-          <h3>Servicios</h3>
-          <a href="agencias.html">Paquetes turísticos</a>
-          <a href="agencias.html">Traslados</a>
-          <a href="agencias.html">Hospedaje</a>
-          <a href="agencias.html">Guías locales</a>
-        </div>
-        <div class="mega-columna">
-          <h3>Atención</h3>
-          <a href="agencias.html">Asesoramiento</a>
-          <a href="agencias.html">Promociones</a>
-          <a href="agencias.html">Viajes grupales</a>
-          <a href="agencias.html">Turismo personalizado</a>
-        </div>
-        <div class="mega-columna">
-          <h3>Consultas</h3>
-          <a href="contacto.html">Contactar agencia</a>
-          <a href="contacto.html">Reservar</a>
-          <a href="contacto.html">Solicitar info</a>
-          <a href="contacto.html">Atención online</a>
-        </div>
-      </div>
-    </li>
-
-    <li class="dropdown">
-      <a href="precios.html">Precios</a>
-      <div class="mega-menu">
-        <div class="mega-columna">
-          <h3>Planes</h3>
-          <a href="precios.html">Económico</a>
-          <a href="precios.html">Estándar</a>
-          <a href="precios.html">Premium</a>
-          <a href="precios.html">Familiar</a>
-        </div>
-        <div class="mega-columna">
-          <h3>Incluye</h3>
-          <a href="precios.html">Hospedaje</a>
-          <a href="precios.html">Desayuno</a>
-          <a href="precios.html">Excursiones</a>
-          <a href="precios.html">Transporte</a>
-        </div>
-        <div class="mega-columna">
-          <h3>Comparar</h3>
-          <a href="precios.html">Ver tabla</a>
-          <a href="precios.html">Ofertas</a>
-          <a href="precios.html">Promociones</a>
-          <a href="precios.html">Temporada alta</a>
-        </div>
-      </div>
-    </li>
-
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="contacto.html">Contacto</a></li>
-  </ul>
+    </div>
 </nav>
 </header>
 
 <main>
-  <section class="hero">
-  <video autoplay muted loop playsinline class="hero-video">
+  <section class="hero position-relative d-flex align-items-center justify-content-center text-center text-white overflow-hidden" style="height: 80vh;">
+  
+  <video autoplay muted loop playsinline class="position-absolute w-100 h-100 object-fit-cover" style="z-index: 1; top: 0; left: 0; filter: brightness(0.6);">
     <source src="video/video-jujuy.mp4" type="video/mp4">
-    Tu navegador no soporta videos.
   </video>
 
-  <div class="hero-overlay"></div>
+  <div class="container position-relative" style="z-index: 2;">
+    
+    <h2 id="titulo-hero" class="display-3 fw-bold mb-3" style="display: none;">
+      Descubrí paisajes inolvidables
+    </h2>
+    
+    <p id="subtitulo-hero" class="lead fs-3 mb-4" style="display: none;">
+      Viví la magia de Jujuy y sus destinos únicos
+    </p>
+    
+    <div id="contenedor-boton" style="display: none;">
+      <a href="destinos.html" class="btn btn-orange btn-lg rounded-pill px-5 shadow">
+      <i class="bi bi-compass me-2"></i>Explorar destinos
+      </a>
+    </div>
 
-  <div class="hero-contenido">
-    <h2 class="texto-animado">Descubrí paisajes inolvidables</h2>
-    <p class="texto-animado-retraso">Viví la magia de Jujuy y sus destinos únicos</p>
-    <a href="destinos.html" class="btn texto-animado-boton">Explorar destinos</a>
   </div>
 </section>
 
-<section class="destinos-container">
-  <div class="titulo-seccion">
-    <h2>Destinos Destacados</h2>
-    <p>Explorá la belleza natural de nuestra provincia</p>
-  </div>
+<section id="destinos" class="py-5 bg-light">
+  <div class="container">
+    
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Destinos Destacados</h2>
+      <p class="text-muted fs-5">Explorá la belleza natural de nuestra provincia</p>
+    </div>
 
-  <div class="destinos-grid">
-    <article class="card">
-      <div class="card-imagen">
-        <img src="img/destinos/7-colores.jpg" alt="Cerro de los Siete Colores en Purmamarca">
-        <div class="card-overlay">
-          <span>Ver Detalles</span>
+    <div class="row g-4">
+      
+      <div class="col-12 col-md-4">
+        <div class="card h-100 border-0 shadow-sm destino-card">
+          <div class="posicion-relativa overflow-hidden">
+            <img src="img/destinos/7-colores.jpg" class="card-img-top img-zoom" alt="Cerro de los Siete Colores en Purmamarca">
+            <div class="card-img-overlay d-flex align-items-center justify-content-center">
+              <span class="badge rounded-pill bg-dark bg-opacity-50 px-3 py-2 text-uppercase">Ver Detalles</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Cerro de los 7 Colores</h5>
+            <p class="card-text text-muted">La maravilla geológica más icónica de la Quebrada de Humahuaca.</p>
+            <a href="destinos.html#todos" class="btn btn-outline-primary rounded-pill w-100 mt-2">Saber más</a>
+          </div>
         </div>
       </div>
-      <div class="card-info">
-        <h3>Cerro de los 7 Colores</h3>
-        <p>La maravilla geológica más icónica de la Quebrada de Humahuaca.</p>
-        <a href="destinos.html#todos" class="btn-card">Saber más</a>
-      </div>
-    </article>
 
-    <article class="card">
-      <div class="card-imagen">
-        <img src="img/destinos/pucara.jpg" alt="Pucará de Tilcara, fortaleza prehispánica">
-        <div class="card-overlay">
-          <span>Ver Detalles</span>
+      <div class="col-12 col-md-4">
+        <div class="card h-100 border-0 shadow-sm destino-card">
+          <div class="posicion-relativa overflow-hidden">
+            <img src="img/destinos/pucara.jpg" class="card-img-top img-zoom" alt="Pucará de Tilcara, fortaleza prehispánica">
+            <div class="card-img-overlay d-flex align-items-center justify-content-center">
+              <span class="badge rounded-pill bg-dark bg-opacity-50 px-3 py-2 text-uppercase">Ver Detalles</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Pucará de Tilcara</h5>
+            <p class="card-text text-muted">Explorá la fortaleza milenaria de los antiguos pobladores andinos.</p>
+            <a href="destinos.html#todos" class="btn btn-outline-primary rounded-pill w-100 mt-2">Saber más</a>
+          </div>
         </div>
       </div>
-      <div class="card-info">
-        <h3>Pucará de Tilcara</h3>
-        <p>Explorá la fortaleza milenaria de los antiguos pobladores andinos.</p>
-        <a href="destinos.html#todos" class="btn-card">Saber más</a>
-      </div>
-    </article>
 
-    <article class="card">
-      <div class="card-imagen">
-        <img src="img/destinos/salinas.jpg" alt="Salinas Grandes, desierto blanco">
-        <div class="card-overlay">
-          <span>Ver Detalles</span>
+      <div class="col-12 col-md-4">
+        <div class="card h-100 border-0 shadow-sm destino-card">
+          <div class="posicion-relativa overflow-hidden">
+            <img src="img/destinos/salinas.jpg" class="card-img-top img-zoom" alt="Salinas Grandes, desierto blanco">
+            <div class="card-img-overlay d-flex align-items-center justify-content-center">
+              <span class="badge rounded-pill bg-dark bg-opacity-50 px-3 py-2 text-uppercase">Ver Detalles</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Salinas Grandes</h5>
+            <p class="card-text text-muted">Un desierto blanco infinito a más de 3.000 metros de altura.</p>
+            <a href="destinos.html#todos" class="btn btn-outline-primary rounded-pill w-100 mt-2">Saber más</a>
+          </div>
         </div>
       </div>
-      <div class="card-info">
-        <h3>Salinas Grandes</h3>
-        <p>Un desierto blanco infinito a más de 3.000 metros de altura.</p>
-        <a href="destinos.html#todos" class="btn-card">Saber más</a>
-      </div>
-    </article>
+
+    </div>
   </div>
 </section>
 
-<section class="estadisticas">
-  <div class="contador-item">
-    <div class="numero" id="contador-visitantes"></div>
-    <p>Visitantes Felices</p>
-  </div>
-  <div class="contador-item">
-    <div class="numero" id="contador-guias"></div>
-    <p>Guías Expertos</p>
-  </div>
-  <div class="contador-item">
-    <div class="numero" id="contador-destinos"></div>
-    <p>Destinos Únicos</p>
+<section class="estadisticas py-5" style="background-color: #0f4c5c; color: white;">
+  <div class="container text-center">
+    <div class="row g-4">
+      
+      <div class="col-md-4">
+        <div class="contador-item">
+          <div class="numero fw-bold display-4" id="contador-visitantes" data-target="500">0</div>
+          <p class="text-uppercase fw-bold mt-2" style="color: #ffd6a5;">Visitantes Felices</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="contador-item">
+          <div class="numero fw-bold display-4" id="contador-guias" data-target="50">0</div>
+          <p class="text-uppercase fw-bold mt-2" style="color: #ffd6a5;">Guías Expertos</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="contador-item">
+          <div class="numero fw-bold display-4" id="contador-destinos" data-target="15">0</div>
+          <p class="text-uppercase fw-bold mt-2" style="color: #ffd6a5;">Destinos Únicos</p>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
-<section class="testimonios">
-  <div class="titulo-seccion">
-    <h2>Lo que dicen nuestros viajeros</h2>
-  </div>
-
-  <div class="carrusel-contenedor">
-    <input type="radio" name="slider" id="item-1" checked>
-    <input type="radio" name="slider" id="item-2">
-    <input type="radio" name="slider" id="item-3">
-
-    <div class="slides">
-  <div class="slide">
-    <div class="info-viajero">
-      <p>"La Quebrada superó mis expectativas. La organización de las agencias locales fue impecable."</p>
-      <h4>- Carlos Gómez</h4>
+<section class="testimonios py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold" style="color: #0f4c5c;">Lo que dicen nuestros viajeros</h2>
     </div>
-  </div>
 
-  <div class="slide">
-    <div class="info-viajero"> 
-      <p>"Las Salinas Grandes son un lugar de otro planeta. Gracias a Turismo Jujuy por las recomendaciones."</p>
-      <h4>- Lucía Fernández</h4>
-    </div>
-  </div>
+    <div id="carouselTestimonios" class="carousel slide" data-bs-ride="carousel">
+      
+      <div class="carousel-inner text-center">
+        
+        <div class="carousel-item active">
+          <div class="info-viajero">
+            <p class="quote-text fst-italic mx-auto">
+              "La Quebrada superó mis expectativas. La organización de las agencias locales fue impecable."
+            </p>
+            <h4 class="viajero-nombre mt-3">- Carlos Gómez</h4>
+          </div>
+        </div>
 
-  <div class="slide">
-    <div class="info-viajero"> 
-      <p>"Trekking en Purmamarca fue la mejor experiencia de mi vida. Los colores del cerro son reales."</p>
-      <h4>- Marcos Juárez</h4>
-    </div>
-  </div>
-</div>
+        <div class="carousel-item">
+          <div class="info-viajero">
+            <p class="quote-text fst-italic mx-auto">
+              "Las Salinas Grandes son un lugar de otro planeta. Gracias a Turismo Jujuy por las recomendaciones."
+            </p>
+            <h4 class="viajero-nombre mt-3">- Lucía Fernández</h4>
+          </div>
+        </div>
 
-    <div class="navegacion">
-      <label for="item-1" class="punto"></label>
-      <label for="item-2" class="punto"></label>
-      <label for="item-3" class="punto"></label>
+        <div class="carousel-item">
+          <div class="info-viajero">
+            <p class="quote-text fst-italic mx-auto">
+              "Trekking en Purmamarca fue la mejor experiencia de mi vida. Los colores del cerro son reales."
+            </p>
+            <h4 class="viajero-nombre mt-3">- Marcos Juárez</h4>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="carousel-indicators custom-dots">
+        <button type="button" data-bs-target="#carouselTestimonios" data-bs-slide-to="0" class="active" aria-current="true"></button>
+        <button type="button" data-bs-target="#carouselTestimonios" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#carouselTestimonios" data-bs-slide-to="2"></button>
+      </div>
+
     </div>
   </div>
 </section>
 
 </main>
 
-<footer class="footer-completo">
-  <div class="footer-grid">
-    <div class="footer-col">
-      <h3>Newsletter</h3>
-      <p>Suscribite para recibir ofertas de viajes.</p>
-      <form class="newsletter-form">
-        <input type="email" placeholder="Tu email" required>
-        <button type="submit" class="btn-sm">Unirme</button>
-      </form>
-    </div>
-
-    <div class="footer-col">
-      <h3>Seguinos</h3>
-      <div class="redes">
-        <a href="#">Facebook</a>
-        <a href="#">Instagram</a>
-        <a href="#">Twitter</a>
+<footer class="footer-completo py-5" style="background-color: #0f4c5c; color: white;">
+  <div class="container">
+    <div class="row g-4 align-items-start"> <div class="col-md-4">
+        <h3 class="h5 fw-bold mb-3" style="color: #ffd6a5;">Newsletter</h3>
+        <p class="small">Suscribite para recibir ofertas de viajes y novedades de la Puna y la Quebrada.</p>
+        <form class="d-flex mt-3">
+          <input type="email" class="form-control me-2" placeholder="Tu email" style="border-radius: 20px;">
+          <button class="btn btn-orange text-white" type="submit" style="border-radius: 20px; background-color: #f16821;">Unirme</button>
+        </form>
       </div>
+
+      <div class="col-md-4 text-md-center">
+        <h3 class="h5 fw-bold mb-3" style="color: #ffd6a5;">Seguinos</h3>
+        <div class="redes d-flex justify-content-md-center gap-3 fs-3">
+          <a href="#" class="text-white"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="text-white"><i class="bi bi-twitter-x"></i></a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+    <h3 class="h5 fw-bold mb-3" style="color: #ffd6a5;">Ubicación</h3>
+    <div class="mapa-contenedor shadow-sm rounded overflow-hidden">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58210.35515206263!2d-65.3341405688537!3d-24.18933543132644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x940d02196646736d%3A0x600c015b69998!2sSan%20Salvador%20de%20Jujuy%2C%20Jujuy!5e0!3m2!1ses-419!2sar!4v1714080000000!5m2!1ses-419!2sar" 
+            width="100%" 
+            height="200" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+    <p class="small mt-2 opacity-75"><i class="bi bi-geo-alt-fill me-1"></i> San Salvador de Jujuy, Argentina</p>
+</div>
+
     </div>
 
-   <div class="footer-col">
-  <h3>Ubicación</h3>
-  <div class="mapa-contenedor">
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14559.344485303683!2d-65.31174624999999!3d-24.17748895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941b0f69905260d3%3A0x67396a8479e0a8!2sFacultad%20de%20Ingenier%C3%ADa%20-%20UNJu!5e0!3m2!1ses-419!2sar!4v1712950000000!5m2!1ses-419!2sar" 
-      width="100%" 
-      height="200" 
-      style="border:0;" 
-      allowfullscreen="" 
-      loading="lazy" 
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </div>
-</div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2026 Turismo Jujuy - Facultad de Ingeniería UNJU</p>
+    <div class="text-center mt-5 pt-3 border-top border-white border-opacity-10">
+      <p class="small mb-0 opacity-75">© 2026 Turismo Jujuy - Facultad de Ingeniería UNJU</p>
+    </div>
   </div>
 </footer>
+
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+
 </body>
 </html>

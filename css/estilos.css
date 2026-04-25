@@ -28,238 +28,45 @@ main {
   flex: 1; /* Esto obliga al contenido principal a expandirse y empujar el footer al fondo */
 }
 
-/* --- HEADER Y NAVBAR --- */
-.header {
-  background-color: var(--color-primario);
-  color: var(--color-blanco);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 40px; /* Reduje el padding vertical para manejarlo con la altura de los links */
-  height: 80px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
+/* --- ESTILOS NAVBAR CON ICONOS --- */
 
-.navbar {
-  position: relative; /* CLAVE: El mega menú se posicionará relativo a toda la nav */
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.menu {
-  list-style: none;
-  display: flex;
-  gap: 10px;
-  height: 100%;
-}
-
-.menu > li {
-  position: static; /* CLAVE: El li NO debe ser relativo para que el menú no se corte */
-  display: flex;
-  align-items: center;
-}
-
-.menu > li > a {
-  color: var(--color-blanco);
-  text-decoration: none;
-  font-weight: bold;
-  padding: 0 15px;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  transition: color 0.3s ease;
-}
-
-.menu > li > a:hover {
-  color: #ffd6a5;
-}
-
-/* --- MEGA MENU --- */
-.dropdown .mega-menu {
-  position: absolute;
-  top: 80px; /* La misma altura que el header */
-  left: 0;
-  right: 0; /* Esto hace que el menú abarque todo el ancho de la navbar */
-  background-color: var(--color-blanco);
-  color: var(--color-texto);
-  display: flex;
-  justify-content: center; /* Centra las columnas */
-  gap: 50px;
-  padding: 40px;
-  box-shadow: var(--sombra);
-  border-radius: 0 0 12px 12px;
-  
-  /* Estados iniciales para la animación */
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(15px);
-  transition: all 0.3s ease;
-  z-index: 1200;
-}
-
-.dropdown:hover .mega-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.mega-columna {
-  flex: 0 1 250px; /* No crecen demasiado, mantienen un ancho elegante */
-}
-
-.mega-columna h3 {
-  color: var(--color-primario);
-  font-size: 1.1rem;
-  margin-bottom: 15px;
-  border-bottom: 2px solid #eee;
-  padding-bottom: 8px;
-}
-
-.mega-columna a {
-  display: block;
-  color: #444;
-  text-decoration: none;
-  padding: 8px 0;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
-}
-
-.mega-columna a:hover {
-  color: var(--color-secundario);
-  padding-left: 10px;
-}
-
-/* --- SECCIÓN HERO CORREGIDA --- */
-.hero {
-  position: relative;
-  height: 85vh; /* Altura de la sección */
-  width: 100%;
-  display: flex;
-  flex-direction: column; /* Alinea los elementos en columna */
-  justify-content: center; /* Centrado vertical */
-  align-items: center;    /* Centrado horizontal */
-  text-align: center;
-  overflow: hidden; 
-  background-color: #000; /* Fondo negro por si el video tarda en cargar */
-}
-
-/* El video debe ocupar TODO el espacio */
-.hero-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Clave: ajusta el video sin estirarlo */
-  z-index: 1; /* Detrás del texto pero delante del fondo */
-}
-
-/* El overlay debe estar entre el video y el texto */
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Capa oscura */
-  z-index: 2;
-}
-
-/* El contenido debe estar por encima de todo */
-.hero-contenido {
-  position: relative; /* Para que respete el z-index */
-  z-index: 3;
-  color: var(--color-blanco);
-  width: 90%; /* Evita que el texto toque los bordes en móviles */
-  max-width: 800px;
-}
-
-.hero-contenido h2 {
-  font-size: 3.5rem;
-  margin-bottom: 20px;
-  line-height: 1.2;
-}
-
-.hero-contenido p {
-  font-size: 1.5rem;
-  margin-bottom: 30px;
-}
-
-/* --- ANIMACIONES --- */
-.texto-animado {
-  animation: aparecer 1s ease forwards;
-}
-
-.texto-animado-retraso {
-  opacity: 0;
-  animation: aparecer 1s ease 0.5s forwards;
-}
-
-.texto-animado-boton {
-  opacity: 0;
-  animation: aparecer 1s ease 1s forwards;
-}
-
-@keyframes aparecer {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.btn {
+.nav-link i {
+  color: var(--color-secundario); /* El naranja de Jujuy para resaltar los iconos */
+  transition: transform 0.3s ease;
   display: inline-block;
-  background-color: var(--color-secundario);
-  color: var(--color-blanco);
-  text-decoration: none;
-  padding: 15px 30px;
-  border-radius: 8px;
-  font-weight: bold;
-  margin-top: 20px;
 }
 
-/* --- RESPONSIVE --- */
-@media (max-width: 992px) {
-  .dropdown .mega-menu {
-    gap: 20px;
-    padding: 20px;
-  }
+/* Efecto divertido: cuando pasás el mouse por el link, el icono se mueve un poco */
+.nav-link:hover i {
+  transform: rotate(15deg) scale(1.2);
 }
 
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    height: auto;
-    padding: 20px;
-  }
-  
-  .menu {
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 20px;
-  }
+.nav-link {
+  font-weight: 500;
+  padding: 0.5rem 1rem !important;
+}
 
-  /* En móviles, el mega menú suele ser mejor que se vea estático o tipo acordeón */
-  .dropdown .mega-menu {
-    position: static;
-    display: none; /* Se oculta por defecto en móvil */
-    width: 100%;
-    box-shadow: none;
-    transform: none;
-    flex-direction: column;
-    padding: 10px;
-  }
 
-  .dropdown:hover .mega-menu {
-    display: flex;
-  }
+/* --- NUEVA SECCIÓN HERO (BOOTSTRAP + JQUERY) --- */
+
+.hero video {
+    filter: brightness(0.5); /* Oscurece el video para que el texto se lea mejor */
+    object-fit: cover;       /* Evita que el video se estire o se vea flaco */
+}
+
+/* Estilo personalizado para el botón que NO es del navbar */
+.btn-orange {
+    background-color: #f16821 !important;
+    color: white !important;
+    border-radius: 50px;
+    font-weight: bold;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-orange:hover {
+    background-color: #d35400 !important;
+    transform: scale(1.05); /* Efecto de crecimiento al pasar el mouse */
 }
 
 /* --- FOOTER REFORMULADO --- */
@@ -280,327 +87,185 @@ main {
 }
 
 /* --- SECCIÓN DESTINOS --- */
-.destinos-container {
-  padding: 80px 40px;
-  max-width: 1200px;
-  margin: 0 auto;
+/* --- SECCIÓN DESTINOS (OPTIMIZADA) --- */
+
+/* 1. Eliminamos .destinos-container y .destinos-grid porque Bootstrap usa .container y .row */
+
+.destino-card {
+    border-radius: 15px;
+    overflow: hidden;
+    /* Mantenemos tu sombra original */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    /* Mantenemos tu transición tipo "rebote" (cubic-bezier) que queda genial */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
 }
 
-.titulo-seccion {
-  text-align: center;
-  margin-bottom: 50px;
+/* Efecto hover: La tarjeta se eleva */
+.destino-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2) !important;
 }
 
-.titulo-seccion h2 {
-  color: var(--color-primario);
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+/* Contenedor de imagen para el zoom */
+.posicion-relativa {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
 }
 
-/* --- GRID DE TARJETAS --- */
-.destinos-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-}
-
-/* --- ESTILO DE LA TARJETA (CARD) --- */
-.card {
-  background-color: var(--color-blanco);
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
-}
-
-/* Efecto hover: La tarjeta se eleva y aumenta la sombra */
-.card:hover {
-  transform: translateY(-15px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
-}
-
-.card-imagen {
-  position: relative;
-  height: 250px;
-  overflow: hidden;
-}
-
-.card-imagen img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s ease;
+.img-zoom {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
 }
 
 /* Efecto hover: Zoom en la imagen */
-.card:hover .card-imagen img {
-  transform: scale(1.1);
+.destino-card:hover .img-zoom {
+    transform: scale(1.1);
 }
 
-/* Overlay que aparece al pasar el cursor */
-.card-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(15, 76, 92, 0.7); /* Usamos el color primario con transparencia */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 0.4s ease;
+/* 2. El Overlay (Ver Detalles) */
+/* Reemplazamos .card-overlay por la clase de Bootstrap .card-img-overlay pero con tus estilos */
+.card-img-overlay {
+    background: rgba(15, 76, 92, 0.7); /* Tu color primario con transparencia */
+    opacity: 0;
+    transition: opacity 0.4s ease;
 }
 
-.card-overlay span {
-  color: white;
-  border: 2px solid white;
-  padding: 10px 20px;
-  font-weight: bold;
-  text-transform: uppercase;
+.destino-card:hover .card-img-overlay {
+    opacity: 1;
 }
 
-.card:hover .card-overlay {
-  opacity: 1;
+/* El botón de adentro (span) */
+.card-img-overlay span {
+    color: white;
+    border: 2px solid white;
+    padding: 10px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
-.card-info {
-  padding: 25px;
-  text-align: center;
+/* 3. Ajustes de texto */
+.card-title {
+    color: #0f4c5c; /* Tu color primario */
 }
 
-.card-info h3 {
-  color: var(--color-primario);
-  margin-bottom: 15px;
+/* Botón "Saber más" personalizado con tus estilos */
+.btn-outline-primary {
+    color: #f16821; /* Tu color secundario */
+    border-color: #f16821;
 }
 
-.card-info p {
-  color: #666;
-  font-size: 0.95rem;
-  margin-bottom: 20px;
+.btn-outline-primary:hover {
+    background-color: #f16821;
+    border-color: #f16821;
+    color: white;
 }
 
-.btn-card {
-  display: inline-block;
-  color: var(--color-secundario);
-  text-decoration: none;
-  font-weight: bold;
-  border: 2px solid var(--color-secundario);
-  padding: 8px 20px;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-}
-
-.btn-card:hover {
-  background-color: var(--color-secundario);
-  color: white;
-}
-
-/* --- SECCIÓN CONTADORES --- */
+/* --- SECCIÓN CONTADORES (LIMPIA) --- */
 .estadisticas {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 60px 20px;
-  background-color: var(--color-primario);
-  color: var(--color-blanco);
-  text-align: center;
-}
-
-.contador-item p {
-  font-weight: bold;
-  text-transform: uppercase;
-  margin-top: 10px;
-  font-size: 0.9rem;
-  color: #ffd6a5;
+  /* El color de fondo y padding ya los pusimos con clases de Bootstrap en el HTML */
 }
 
 .numero {
-  font-size: 3rem;
-  font-weight: bold;
+  /* Bootstrap ya nos da el tamaño con display-4, pero podemos reforzarlo */
+  font-family: 'Arial', sans-serif; 
 }
 
-/* --- ANIMACIÓN CON KEYFRAMES --- */
-/* Definimos la animación para que cambie el contenido de texto */
-@keyframes cuentaRegresiva {
-  0%   { content: "0"; }
-  10%  { content: "100+"; }
-  30%  { content: "250+"; }
-  50%  { content: "400+"; }
-  70%  { content: "480+"; }
-  100% { content: "500+"; }
-}
-
-@keyframes cuentaGuias {
-  0%   { content: "0"; }
-  50%  { content: "25+"; }
-  100% { content: "50+"; }
-}
-
-@keyframes cuentaDestinos {
-  0%   { content: "0"; }
-  100% { content: "15+"; }
-}
-
-/* Aplicamos la animación usando el pseudo-elemento ::after */
-#contador-visitantes::after {
-  content: "500+";
-  animation: cuentaRegresiva 3s ease-out;
-}
-
-#contador-guias::after {
-  content: "50+";
-  animation: cuentaGuias 3s ease-out;
-}
-
-#contador-destinos::after {
-  content: "15+";
-  animation: cuentaDestinos 3s ease-out;
-}
-
-/* --- SECCIÓN TESTIMONIOS (LIMPIEZA TOTAL DE ESPACIOS) --- */
-.testimonios {
-  padding: 30px 20px; /* Reducimos el relleno de la sección */
-  background-color: var(--color-fondo);
-}
-
-.testimonios .titulo-seccion {
-  margin-bottom: 0; /* Eliminamos el espacio debajo del título */
-}
-
-.carrusel-contenedor {
-  max-width: 800px;
-  margin: 0 auto;
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-}
-
-/* ESTE BLOQUE ES NECESARIO: Esconde los radios pero permite que funcionen */
-input[type="radio"] {
-  display: none;
-}
-
-.slides {
-  display: flex;
-  width: 300%;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.slide {
-  width: 100%;
-  padding: 10px 40px; /* Reducimos el espacio superior del slide */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 180px; /* Altura más compacta */
-}
-
-.info-viajero p {
-  font-style: italic;
-  font-size: 1.3rem;
-  color: #444;
-  line-height: 1.5;
-  margin: 0 auto 10px; /* Margen superior en 0 para subir el texto */
-  max-width: 650px;
-}
-
-.info-viajero h4 {
-  color: var(--color-primario);
-  text-transform: uppercase;
+.contador-item p {
   letter-spacing: 1px;
   font-size: 0.9rem;
-  margin: 0; 
 }
 
-/* Lógica de movimiento (Indispensable) */
-#item-1:checked ~ .slides { transform: translateX(0); }
-#item-2:checked ~ .slides { transform: translateX(-33.333%); }
-#item-3:checked ~ .slides { transform: translateX(-66.666%); }
+/* --- TESTIMONIOS ESTILO ANTERIOR --- */
 
-/* Puntos de navegación */
-.navegacion {
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
+.quote-text {
+    font-size: 1.3rem;
+    color: #444;
+    line-height: 1.5;
+    max-width: 700px;
 }
 
-.punto {
-  width: 12px;
-  height: 12px;
-  border: 2px solid var(--color-primario);
-  border-radius: 50%;
-  cursor: pointer;
+.viajero-nombre {
+    color: #0f4c5c; /* Tu color primario */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    font-weight: bold;
 }
 
-#item-1:checked ~ .navegacion label[for="item-1"],
-#item-2:checked ~ .navegacion label[for="item-2"],
-#item-3:checked ~ .navegacion label[for="item-3"] {
-  background-color: var(--color-primario);
+/* Personalización de los puntos de Bootstrap para que sean como los tuyos */
+.custom-dots {
+    position: relative; /* Los saca de arriba del texto */
+    margin-top: 30px;
+    bottom: 0;
 }
 
+.custom-dots button {
+    width: 12px !important;
+    height: 12px !important;
+    border-radius: 50% !important;
+    border: 2px solid #0f4c5c !important; /* El borde de tu versión anterior */
+    background-color: transparent !important;
+    opacity: 1 !important;
+    padding: 0;
+    margin: 0 5px;
+}
+
+.custom-dots button.active {
+    background-color: #0f4c5c !important; /* Relleno solo para el activo */
+}
+
+/* Ocultamos las flechas de los costados si no las querés */
+.carousel-control-prev, .carousel-control-next {
+    display: none;
+}
+
+/* --- FOOTER COMPLETO --- */
 .footer-completo {
-  background-color: var(--color-primario);
-  color: var(--color-blanco);
-  padding: 60px 40px 20px;
+    background-color: #0f4c5c; /* Color primario del proyecto */
+    color: white;
 }
 
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.footer-col h3 {
-  color: #ffd6a5;
-  margin-bottom: 20px;
-}
-
-.newsletter-form {
-  display: flex;
-  gap: 10px;
-  margin-top: 15px;
-}
-
-.newsletter-form input {
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  flex: 1;
-}
-
-.btn-sm {
-  background-color: var(--color-secundario);
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 50px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255,255,255,0.1);
-  font-size: 0.8rem;
-}
-
-/* --- ENLACES DEL FOOTER --- */
+/* Redes Sociales */
 .redes a {
-  color: var(--color-blanco); /* Cambiamos el azul por blanco */
-  text-decoration: none;
-  display: block;
-  margin-bottom: 10px;
-  transition: color 0.3s ease;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
 .redes a:hover {
-  color: var(--color-secundario); /* Efecto hover con el naranja de Jujuy */
-  padding-left: 5px; /* Pequeño movimiento para la micro-interacción */
+    color: #f16821 !important; /* Tu color secundario naranja */
+    transform: translateY(-5px);
+}
+
+.redes i {
+    font-size: 1.5rem; 
+}
+
+/* Newsletter Input */
+.footer-completo .form-control {
+    padding: 10px 15px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 5px 0 0 5px; /* Redondeado solo a la izquierda si usas input-group */
+}
+
+/* Mapa Responsivo */
+/* Si usas la clase .ratio de Bootstrap en el HTML */
+.mapa-contenedor {
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    line-height: 0; /* Quita espacios extra abajo del iframe */
+}
+
+.mapa-contenedor iframe {
+    filter: grayscale(10%) contrast(1.1); /* Hace que los colores del mapa combinen mejor con tu footer */
+    transition: filter 0.3s ease;
+}
+
+.mapa-contenedor:hover iframe {
+    filter: grayscale(0%); /* Al pasar el mouse recupera todo el color */
 }
 
 /* --- PÁGINA DE DESTINOS --- */
@@ -776,7 +441,7 @@ input[name="filtro"] {
 /* --- PÁGINA DE AGENCIAS (BORDE NARANJA INDEPENDIENTE) --- */
 
 .agencias-page {
-    padding-top: 80px; 
+    padding-top: 80px;
     max-width: 1100px;
     margin: 0 auto;
     padding-left: 20px;
@@ -785,7 +450,7 @@ input[name="filtro"] {
 
 .introduccion-agencias {
     text-align: center;
-    margin-bottom: 30px; 
+    margin-bottom: 30px;
 }
 
 .introduccion-agencias h2 {
@@ -816,7 +481,7 @@ input[name="filtro"] {
     text-align: center;
     transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     transform-style: preserve-3d;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.18); 
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
     border-radius: 15px;
 }
 
@@ -839,10 +504,10 @@ input[name="filtro"] {
 
 /* CARA FRONTAL: BORDES NARANJAS FORZADOS */
 .card-front {
-    background-color: #fafafa; 
+    background-color: #fafafa;
     color: #333;
     /* Aplicamos el color naranja directamente para evitar el azul */
-    border-top: 6px solid #f39c12; 
+    border-top: 6px solid #f39c12;
     border-bottom: 6px solid #f39c12;
     /* Bordes laterales sutiles */
     border-left: 1px solid #eee;
@@ -939,7 +604,7 @@ input[name="filtro"] {
 
 @media (max-width: 768px) {
     .agencias-page {
-        padding-top: 60px; 
+        padding-top: 60px;
     }
     .agencia-card {
         width: 280px;
@@ -989,7 +654,7 @@ input[name="filtro"] {
     color: #555;
 }
 
-.input-group input, 
+.input-group input,
 .input-group textarea {
     width: 100%;
     padding: 12px;
@@ -1135,7 +800,7 @@ input[name="filtro"] {
     border-collapse: collapse;
 }
 
-.tabla-precios th, 
+.tabla-precios th,
 .tabla-precios td {
     padding: 18px;
     border-bottom: 1px solid #eee;
@@ -1150,7 +815,7 @@ input[name="filtro"] {
 
 /* Efecto de resaltado suave sin mover la tabla */
 .tabla-precios tbody tr:hover {
-    background-color: #fffaf4; 
+    background-color: #fffaf4;
     transition: background-color 0.2s;
 }
 
@@ -1172,24 +837,24 @@ input[name="filtro"] {
 .info-tooltip::after {
     content: attr(data-tooltip);
     position: absolute;
-    bottom: 130%; 
+    bottom: 130%;
     /* En lugar de left: 50%, lo alineamos al inicio del icono */
-    left: 0; 
+    left: 0;
     transform: translateY(10px); /* Quitamos el translateX(-50%) para que no se mueva a la izquierda */
-    
+
     background-color: #333;
     color: white;
     padding: 10px 15px;
     border-radius: 8px;
     font-size: 0.85rem;
-    
+
     /* Manejo de ancho para que no se desborde */
-    min-width: 180px; 
+    min-width: 180px;
     max-width: 250px;
     white-space: normal; /* Permitimos que el texto use varias líneas si es largo */
     line-height: 1.4;
     text-align: left;
-    
+
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -1276,7 +941,7 @@ input[name="filtro"] {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
     /* Creamos filas automáticas pequeñas para que las noticias se acomoden mejor */
-    grid-auto-rows: min-content; 
+    grid-auto-rows: min-content;
     gap: 30px;
     width: 100% !important;
     grid-auto-flow: dense !important; /* Obligatorio para rellenar huecos */
@@ -1329,7 +994,7 @@ input[name="filtro"] {
 
 /* Esto afecta a todas las noticias MENOS a la principal */
 .art-card:not(.principal) .art-body {
-    flex-grow: 0; 
+    flex-grow: 0;
     padding: 15px; /* Les damos un poquito menos de espacio interno para que quepan mejor */
 }
 
@@ -1353,7 +1018,7 @@ input[name="filtro"] {
 }
 
 .art-card.principal .art-body {
-    padding: 30px; 
+    padding: 30px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start; /* Alinea todo al principio */
