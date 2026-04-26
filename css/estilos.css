@@ -276,10 +276,7 @@ main {
     margin: 0 auto;
 }
 
-input[name="filtro"] {
-    display: none;
-}
-
+/* 1. BOTONES: Limpiamos los radios y dejamos solo el estilo del botón */
 .botones-filtros {
     display: flex;
     justify-content: center;
@@ -291,6 +288,7 @@ input[name="filtro"] {
 .btn-filtro {
     padding: 10px 25px;
     border: 2px solid var(--color-primario);
+    background: transparent; /* Fondo inicial */
     border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -298,44 +296,16 @@ input[name="filtro"] {
     font-weight: bold;
 }
 
-/* Estado activo de los botones */
-#todos:checked ~ .botones-filtros label[for="todos"],
-#cultural:checked ~ .botones-filtros label[for="cultural"],
-#naturaleza:checked ~ .botones-filtros label[for="naturaleza"],
-#gastronomico:checked ~ .botones-filtros label[for="gastronomico"] {
+/* Esta clase la pondrá jQuery automáticamente al hacer clic */
+.btn-filtro.active {
     background-color: var(--color-primario);
     color: white;
 }
 
-/* --- LÓGICA DE FILTRADO UNIFICADA --- */
-
-/* 1. Filtrado de Galería */
-#cultural:checked ~ .galeria-masonry .item-destinos:not(.cat-cultural),
-#naturaleza:checked ~ .galeria-masonry .item-destinos:not(.cat-naturaleza),
-#gastronomico:checked ~ .galeria-masonry .item-destinos:not(.cat-gastronomico) {
-    display: none;
-}
-
-/* 2. Filtrado de Tarjetas de Información */
-#cultural:checked ~ .contenedor-info .info-card:not(.cat-cultural),
-#naturaleza:checked ~ .contenedor-info .info-card:not(.cat-naturaleza),
-#gastronomico:checked ~ .contenedor-info .info-card:not(.cat-gastronomico) {
-    display: none;
-}
-
-/* 3. Filtrado de Filas de la Tabla */
-#cultural:checked ~ .tabla-contenedor tr.cat-naturaleza,
-#cultural:checked ~ .tabla-contenedor tr.cat-gastronomico,
-#naturaleza:checked ~ .tabla-contenedor tr.cat-cultural,
-#naturaleza:checked ~ .tabla-contenedor tr.cat-gastronomico,
-#gastronomico:checked ~ .tabla-contenedor tr.cat-cultural,
-#gastronomico:checked ~ .tabla-contenedor tr.cat-naturaleza {
-    display: none;
-}
-
-/* --- DISEÑO MASONRY --- */
+/* 2. GALERÍA MASONRY: Mantenemos tu grid tal cual lo tenías */
 .galeria-masonry {
     display: grid;
+    /* GRID RESPONSIVE: 1, 2 o 3 columnas según ancho */
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-auto-rows: 200px;
     gap: 20px;
@@ -349,7 +319,10 @@ input[name="filtro"] {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.item-destinos:nth-child(even) { grid-row: span 2; }
+/* Mantenemos tu efecto de altura variable */
+.item-destinos:nth-child(even) { 
+    grid-row: span 2; 
+}
 
 .item-destinos img {
     width: 100%;
@@ -358,15 +331,19 @@ input[name="filtro"] {
     transition: transform 0.5s ease;
 }
 
-.item-destinos:hover img { transform: scale(1.1); }
+/* El zoom se mantiene igual */
+.item-destinos:hover img { 
+    transform: scale(1.1); 
+}
 
+/* 3. OVERLAYS: Tu diseño original intacto */
 .overlay-destinos {
     position: absolute;
     bottom: -100%;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(15, 76, 92, 0.85); /* Color primario con transparencia */
+    background: rgba(15, 76, 92, 0.85); 
     color: white;
     display: flex;
     flex-direction: column;
@@ -377,39 +354,35 @@ input[name="filtro"] {
     text-align: center;
 }
 
-.item-destinos:hover .overlay-destinos { bottom: 0; }
+.item-destinos:hover .overlay-destinos { 
+    bottom: 0; 
+}
 
-/* --- SECCIÓN DETALLES --- */
+/* 4. TARJETAS DE INFO */
 .contenedor-info {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-bottom: 50px;
+    margin-top: 40px;
 }
-
-.info-card {
-    border-left: 5px solid var(--color-secundario);
-    background-color: #f9f9f9;
-    padding: 25px;
-    border-radius: 0 10px 10px 0;
-    transition: transform 0.3s ease;
-}
-
-.info-card:hover { transform: translateX(10px); }
 
 /* --- TABLA RESPONSIVA --- */
 .tabla-contenedor {
     width: 100%;
-    overflow-x: auto;
+    margin-top: 50px;
     border-radius: 10px;
+    overflow: hidden; /* Para que el radio del borde se vea en las esquinas */
     box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto; /* Scroll horizontal en móviles */
+    -webkit-overflow-scrolling: touch;
 }
 
 .tabla-precios {
     width: 100%;
     border-collapse: collapse;
     background-color: white;
-    min-width: 600px;
+    min-width: 600px; /* Asegura que no se amontone el texto en pantallas chicas */
 }
 
 .tabla-precios thead {
@@ -423,9 +396,10 @@ input[name="filtro"] {
     border-bottom: 1px solid #eee;
 }
 
-/* Asegura que las filas visibles se comporten como tablas */
-.tabla-precios tr {
-    display: table-row;
+/* Efecto hover en las filas para mejorar la UX */
+.tabla-precios tbody tr:hover {
+    background-color: #f8f9fa;
+    transition: background 0.3s ease;
 }
 
 .badge {
@@ -433,6 +407,7 @@ input[name="filtro"] {
     border-radius: 20px;
     font-size: 0.75rem;
     font-weight: bold;
+    display: inline-block;
 }
 
 .disponible { background-color: #e2fbe8; color: #1e7e34; }

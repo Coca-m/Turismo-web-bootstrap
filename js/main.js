@@ -25,3 +25,42 @@ $(document).ready(function() {
         });
     });
 });
+
+$(document).ready(function() {
+
+    // --- 1. LÓGICA DE FILTRADO (Galería y Tabla) ---
+    $('#filtros-jquery .btn-filtro').click(function() {
+        // Cambiar estado visual de los botones
+        $('.btn-filtro').removeClass('active');
+        $(this).addClass('active');
+
+        const categoria = $(this).attr('data-filter');
+
+        // Seleccionamos solo la galería y las filas de la tabla
+        const elementos = $('.item-destinos, .fila-destino');
+
+        if (categoria === 'todos') {
+            elementos.show(400);
+        } else {
+            // Escondemos todo lo que no sea la categoría
+            elementos.hide(300);
+            
+            // Filtramos y mostramos solo lo seleccionado
+            elementos.filter('.' + categoria).show(500);
+            
+            // Refresco rápido para asegurar que el grid Masonry se acomode
+            $('.galeria-masonry').hide(0).show(0);
+        }
+    });
+
+    // --- 2. EFECTO ZOOM DINÁMICO ---
+    $('.item-destinos').hover(
+        function() {
+            $(this).find('img').css('transform', 'scale(1.15)');
+        }, 
+        function() {
+            $(this).find('img').css('transform', 'scale(1)');
+        }
+    );
+
+});
