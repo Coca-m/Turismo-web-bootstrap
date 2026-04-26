@@ -3,196 +3,255 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agencias - Turismo Jujuy</title>
+    <title>Turismo Jujuy - Bootstrap & jQuery</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
 
     <header class="header">
-        <div class="logo">
-            <h1>Turismo<span>Jujuy</span></h1>
-        </div>
-        <nav class="navbar" aria-label="Menú principal">
-        <ul class="menu">
-        <li><a href="index.html">Inicio</a></li>
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <i class="bi bi-mountain-fill me-2"></i> Turismo Jujuy
+      </a>
 
-        <li class="dropdown">
-      <a href="destinos.html">Destinos</a>
-      <div class="mega-menu">
-        <div class="mega-columna">
-          <h3>Lugares</h3>
-          <a href="destinos.html">Cerro de los 7 Colores</a>
-          <a href="destinos.html">Pucará de Tilcara</a>
-          <a href="destinos.html">Salinas Grandes</a>
-          <a href="destinos.html">Museo del Cabildo</a>
-          <a href="destinos.html">Valle de la Luna</a>
-          <a href="destinos.html">Iglesia de Uquía</a>
-        </div>
-        <div class="mega-columna">
-          <h3>Categorías</h3>
-          <a href="destinos.html">Naturaleza</a>
-          <a href="destinos.html">Cultural</a>
-          <a href="destinos.html">Gastronómico</a>
-        </div>
-        <div class="mega-columna">
-          <h3>Experiencias</h3>
-          <a href="destinos.html">Excursiones</a>
-          <a href="destinos.html">Trekking</a>
-          <a href="destinos.html">Fotografía</a>
-          <a href="destinos.html">Gastronomía Local</a>
-        </div>
-      </div>
-        </li>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuTurismo" aria-controls="menuTurismo" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <li class="dropdown">
-      <a href="agencias.html">Agencias</a>
-      <div class="mega-menu">
-        <div class="mega-columna">
-          <h3>Servicios</h3>
-          <a href="agencias.html">Paquetes turísticos</a>
-          <a href="agencias.html">Traslados</a>
-          <a href="agencias.html">Hospedaje</a>
-          <a href="agencias.html">Guías locales</a>
-        </div>
-        <div class="mega-columna">
-          <h3>Atención</h3>
-          <a href="agencias.html">Asesoramiento</a>
-          <a href="agencias.html">Promociones</a>
-          <a href="agencias.html">Viajes grupales</a>
-          <a href="agencias.html">Turismo personalizado</a>
-        </div>
-        <div class="mega-columna">
-          <h3>Consultas</h3>
-          <a href="contacto.html">Contactar agencia</a>
-          <a href="contacto.html">Reservar</a>
-          <a href="contacto.html">Solicitar info</a>
-          <a href="contacto.html">Atención online</a>
-        </div>
-      </div>
-        </li>
+      <div class="collapse navbar-collapse" id="menuTurismo">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"><i class="bi bi-house-door me-1"></i>Inicio</a>
+          </li>
 
-        <li class="dropdown">
-      <a href="precios.html">Precios</a>
-      <div class="mega-menu">
-        <div class="mega-columna">
-          <h3>Planes</h3>
-          <a href="precios.html">Económico</a>
-          <a href="precios.html">Estándar</a>
-          <a href="precios.html">Premium</a>
-          <a href="precios.html">Familiar</a>
-        </div>
-        <div class="mega-columna">
-          <h3>Incluye</h3>
-          <a href="precios.html">Hospedaje</a>
-          <a href="precios.html">Desayuno</a>
-          <a href="precios.html">Excursiones</a>
-          <a href="precios.html">Transporte</a>
-        </div>
-        <div class="mega-columna">
-          <h3>Comparar</h3>
-          <a href="precios.html">Ver tabla</a>
-          <a href="precios.html">Ofertas</a>
-          <a href="precios.html">Promociones</a>
-          <a href="precios.html">Temporada alta</a>
-        </div>
-      </div>
-        </li>
+          <li class="nav-item dropdown dropdown-mega position-static">
+            <a class="nav-link dropdown-toggle" href="#" id="dropDestinos" role="button" data-bs-toggle="dropdown">
+              <i class="bi bi-compass me-1"></i> Destinos
+            </a>
+            <div class="dropdown-menu w-100 shadow border-0 p-4">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h6 class="fw-bold text-primary">Lugares</h6>
+                    <a class="dropdown-item" href="destinos.html">Cerro de los 7 Colores</a>
+                    <a class="dropdown-item" href="destinos.html">Pucará de Tilcara</a>
+                    <a class="dropdown-item" href="destinos.html">Salinas Grandes</a>
+                    <a class="dropdown-item" href="destinos.html">Museo del Cabildo</a>
+                    <a class="dropdown-item" href="destinos.html">Valle de la Luna</a>
+                    <a class="dropdown-item" href="destinos.html">Iglesia de Uquía</a>
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="fw-bold text-primary">Categorías</h6>
+                    <a class="dropdown-item" href="destinos.html">Naturaleza</a>
+                    <a class="dropdown-item" href="destinos.html">Cultural</a>
+                    <a class="dropdown-item" href="destinos.html">Gastronómico</a>
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="fw-bold text-primary">Experiencias</h6>
+                    <a class="dropdown-item" href="destinos.html">Excursiones</a>
+                    <a class="dropdown-item" href="destinos.html">Trekking</a>
+                    <a class="dropdown-item" href="destinos.html">Fotografía</a>
+                    <a class="dropdown-item" href="destinos.html">Gastronomía Local</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
 
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
+          <li class="nav-item dropdown dropdown-mega position-static">
+            <a class="nav-link dropdown-toggle" href="#" id="dropAgencias" role="button" data-bs-toggle="dropdown">
+              <i class="bi bi-briefcase me-1"></i> Agencias
+            </a>
+            <div class="dropdown-menu w-100 shadow border-0 p-4">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h6 class="fw-bold text-primary">Servicios</h6>
+                    <a class="dropdown-item" href="agencias.html">Paquetes turísticos</a>
+                    <a class="dropdown-item" href="agencias.html">Traslados</a>
+                    <a class="dropdown-item" href="agencias.html">Hospedaje</a>
+                    <a class="dropdown-item" href="agencias.html">Guías locales</a>
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="fw-bold text-primary">Atención</h6>
+                    <a class="dropdown-item" href="agencias.html">Asesoramiento</a>
+                    <a class="dropdown-item" href="agencias.html">Promociones</a>
+                    <a class="dropdown-item" href="agencias.html">Viajes grupales</a>
+                    <a class="dropdown-item" href="agencias.html">Turismo personalizado</a>
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="fw-bold text-primary">Consultas</h6>
+                    <a class="dropdown-item" href="contacto.html">Contactar agencia</a>
+                    <a class="dropdown-item" href="contacto.html">Reservar</a>
+                    <a class="dropdown-item" href="contacto.html">Solicitar info</a>
+                    <a class="dropdown-item" href="contacto.html">Atención online</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown dropdown-mega position-static">
+            <a class="nav-link dropdown-toggle" href="#" id="dropPrecios" role="button" data-bs-toggle="dropdown">
+              <i class="bi bi-cash-stack me-1"></i> Precios
+            </a>
+            <div class="dropdown-menu w-100 shadow border-0 p-4">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h6 class="fw-bold text-primary">Planes</h6>
+                    <a class="dropdown-item" href="precios.html">Económico</a>
+                    <a class="dropdown-item" href="precios.html">Estándar</a>
+                    <a class="dropdown-item" href="precios.html">Premium</a>
+                    <a class="dropdown-item" href="precios.html">Familiar</a>
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="fw-bold text-primary">Incluye</h6>
+                    <a class="dropdown-item" href="precios.html">Hospedaje</a>
+                    <a class="dropdown-item" href="precios.html">Desayuno</a>
+                    <a class="dropdown-item" href="precios.html">Excursiones</a>
+                    <a class="dropdown-item" href="precios.html">Transporte</a>
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="fw-bold text-primary">Comparar</h6>
+                    <a class="dropdown-item" href="precios.html">Ver tabla</a>
+                    <a class="dropdown-item" href="precios.html">Ofertas</a>
+                    <a class="dropdown-item" href="precios.html">Promociones</a>
+                    <a class="dropdown-item" href="precios.html">Temporada alta</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="blog.html"><i class="bi bi-newspaper me-1"></i> Blog</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="contacto.html"><i class="bi bi-telephone me-1"></i> Contacto</a>
+          </li>
         </ul>
-        </nav>
+      </div>
+    </div>
+</nav>
     </header>
 
-    <main class="agencias-page">
-        <section class="introduccion-agencias">
-            <h2>Agencias de Viajes Autorizadas</h2>
-            <p>Encontrá los mejores profesionales para organizar tu aventura en la provincia.</p>
-        </section>
+   <main class="agencias-page">
+    <section class="introduccion-agencias text-center py-5">
+        <h2>Agencias de Viajes Autorizadas</h2>
+        <p>Encontrá los mejores profesionales para organizar tu aventura en la provincia.</p>
+    </section>
 
-        <section class="lista-agencias">
-    <article class="agencia-card">
-        <div class="card-inner">
-            <div class="card-front">
-                <h3>Puna Adventure</h3>
-                <p class="ubicacion">📍 San Salvador de Jujuy</p>
-                <p>Especialistas en travesías 4x4 a las Salinas Grandes y el Valle de la Luna.</p>
-                <span class="hint">Pasá el mouse para calificar</span>
-            </div>
-            <div class="card-back">
-                <h3>Calificá tu experiencia</h3>
-                <div class="rating">
-                    <input type="radio" name="stars1" id="star5-1"><label for="star5-1">★</label>
-                    <input type="radio" name="stars1" id="star4-1"><label for="star4-1">★</label>
-                    <input type="radio" name="stars1" id="star3-1" checked><label for="star3-1">★</label>
-                    <input type="radio" name="stars1" id="star2-1"><label for="star2-1">★</label>
-                    <input type="radio" name="stars1" id="star1-1"><label for="star1-1">★</label>
+    <section class="lista-agencias d-flex flex-wrap justify-content-center gap-4">
+        <article class="agencia-card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div class="card-content">
+                        <h3>Puna Adventure</h3>
+                        <p class="ubicacion">📍 San Salvador de Jujuy</p>
+                        <p>Especialistas en travesías 4x4 a las Salinas Grandes y el Valle de la Luna.</p>
+                        <span class="hint">Click para calificar</span>
+                    </div>
                 </div>
-                <ul class="servicios-tags">
-                    <li>Traslados</li>
-                    <li>Guías Bilingües</li>
-                    <li>Seguro</li>
-                </ul>
-                <a href="contacto.html" class="btn-agencia">Consultar</a>
+                <div class="card-back">
+                    <div class="card-content">
+                        <h3>Calificá tu experiencia</h3>
+                        <div class="rating-stars" data-agencia="puna">
+                            <i class="star bi bi-star-fill" data-value="1"></i>
+                            <i class="star bi bi-star-fill" data-value="2"></i>
+                            <i class="star bi bi-star-fill" data-value="3"></i>
+                            <i class="star bi bi-star-fill" data-value="4"></i>
+                            <i class="star bi bi-star-fill" data-value="5"></i>
+                        </div>
+                        <p class="rating-text">Tu calificación: <span class="val-rating">0</span>/5</p>
+                        
+                        <ul class="servicios-tags">
+                            <li>Traslados</li>
+                            <li>Guías Bilingües</li>
+                            <li>Seguro</li>
+                        </ul>
+                        <a href="contacto.html" class="btn-agencia">Consultar</a>
+                        <button class="btn-volver mt-2">Volver</button>
+                    </div>
+                </div>
             </div>
-        </div>
-    </article>
+        </article>
 
-    <article class="agencia-card">
-        <div class="card-inner">
-            <div class="card-front">
-                <h3>Quebrada Excursiones</h3>
-                <p class="ubicacion">📍 Tilcara</p>
-                <p>Expertos en trekking cultural y visitas guiadas al Pucará de Tilcara.</p>
-                <span class="hint">Pasá el mouse para calificar</span>
-            </div>
-            <div class="card-back">
-                <h3>Calificá tu experiencia</h3>
-                <div class="rating">
-                    <input type="radio" name="stars2" id="star5-2"><label for="star5-2">★</label>
-                    <input type="radio" name="stars2" id="star4-2" checked><label for="star4-2">★</label>
-                    <input type="radio" name="stars2" id="star3-2"><label for="star3-2">★</label>
-                    <input type="radio" name="stars2" id="star2-2"><label for="star2-2">★</label>
-                    <input type="radio" name="stars2" id="star1-2"><label for="star1-2">★</label>
+        <article class="agencia-card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div class="card-content">
+                        <h3>Quebrada Excursiones</h3>
+                        <p class="ubicacion">📍 Tilcara</p>
+                        <p>Expertos en trekking cultural y visitas guiadas al Pucará de Tilcara.</p>
+                        <span class="hint">Click para calificar</span>
+                    </div>
                 </div>
-                <ul class="servicios-tags">
-                    <li>Trekking</li>
-                    <li>Almuerzo regional</li>
-                    <li>Equipamiento</li>
-                </ul>
-                <a href="contacto.html" class="btn-agencia">Consultar</a>
+                <div class="card-back">
+                    <div class="card-content">
+                        <h3>Calificá tu experiencia</h3>
+                        <div class="rating-stars" data-agencia="quebrada">
+                            <i class="star bi bi-star-fill" data-value="1"></i>
+                            <i class="star bi bi-star-fill" data-value="2"></i>
+                            <i class="star bi bi-star-fill" data-value="3"></i>
+                            <i class="star bi bi-star-fill" data-value="4"></i>
+                            <i class="star bi bi-star-fill" data-value="5"></i>
+                        </div>
+                        <p class="rating-text">Tu calificación: <span class="val-rating">0</span>/5</p>
+                        <ul class="servicios-tags">
+                            <li>Trekking</li>
+                            <li>Almuerzo regional</li>
+                            <li>Equipamiento</li>
+                        </ul>
+                        <a href="contacto.html" class="btn-agencia">Consultar</a>
+                        <button class="btn-volver mt-2">Volver</button>
+                    </div>
+                </div>
             </div>
-        </div>
-    </article>
+        </article>
 
-    <article class="agencia-card">
-        <div class="card-inner">
-            <div class="card-front">
-                <h3>Sabor y Cultura Tours</h3>
-                <p class="ubicacion">📍 Purmamarca</p>
-                <p>Circuitos gastronómicos para descubrir la verdadera humita y empanada jujeña.</p>
-                <span class="hint">Pasá el mouse para calificar</span>
-            </div>
-            <div class="card-back">
-                <h3>Calificá tu experiencia</h3>
-                <div class="rating">
-                    <input type="radio" name="stars3" id="star5-3"><label for="star5-3">★</label>
-                    <input type="radio" name="stars3" id="star4-3"><label for="star4-3">★</label>
-                    <input type="radio" name="stars3" id="star3-3" checked><label for="star3-3">★</label>
-                    <input type="radio" name="stars3" id="star2-3"><label for="star2-3">★</label>
-                    <input type="radio" name="stars3" id="star1-3"><label for="star1-3">★</label>
+        <article class="agencia-card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div class="card-content">
+                        <h3>Sabor y Cultura Tours</h3>
+                        <p class="ubicacion">📍 Purmamarca</p>
+                        <p>Circuitos gastronómicos para descubrir la verdadera humita y empanada jujeña.</p>
+                        <span class="hint">Click para calificar</span>
+                    </div>
                 </div>
-                <ul class="servicios-tags">
-                    <li>Clases de cocina</li>
-                    <li>Degustación</li>
-                    <li>Traslados</li>
-                </ul>
-                <a href="contacto.html" class="btn-agencia">Consultar</a>
+                <div class="card-back">
+                    <div class="card-content">
+                        <h3>Calificá tu experiencia</h3>
+                        <div class="rating-stars" data-agencia="sabor">
+                            <i class="star bi bi-star-fill" data-value="1"></i>
+                            <i class="star bi bi-star-fill" data-value="2"></i>
+                            <i class="star bi bi-star-fill" data-value="3"></i>
+                            <i class="star bi bi-star-fill" data-value="4"></i>
+                            <i class="star bi bi-star-fill" data-value="5"></i>
+                        </div>
+                        <p class="rating-text">Tu calificación: <span class="val-rating">0</span>/5</p>
+                        <ul class="servicios-tags">
+                            <li>Clases de cocina</li>
+                            <li>Degustación</li>
+                            <li>Traslados</li>
+                        </ul>
+                        <a href="contacto.html" class="btn-agencia">Consultar</a>
+                        <button class="btn-volver mt-2">Volver</button>
+                    </div>
+                </div>
             </div>
-        </div>
-    </article>
-</section>
-    </main>
+        </article>
+    </section>
+</main>
+
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
 
 </body>
 </html>

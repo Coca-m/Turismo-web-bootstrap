@@ -64,3 +64,52 @@ $(document).ready(function() {
     );
 
 });
+
+$(document).ready(function() {
+
+    // --- 1. EFECTO FLIP (Giro de cartas) ---
+    // Usamos toggleClass para que al hacer click gire y al volver a hacer click regrese
+    $('.agencia-card').click(function(e) {
+        // Evitamos que el giro ocurra si clickean en el botón de contacto o enlaces
+        if (!$(e.target).is('a, .btn-agencia')) {
+            $(this).find('.card-inner').toggleClass('flipped');
+        }
+    });
+
+    // Botón "Volver" dentro de la carta (opcional para mejor UX)
+    $('.btn-volver').click(function(e) {
+        e.stopPropagation(); // Evita conflictos con el click del padre
+        $(this).closest('.card-inner').removeClass('flipped');
+    });
+
+
+    // --- 2. SISTEMA DE RATING (Estrellas) ---
+    $('.star').on('click', function(e) {
+        e.stopPropagation(); // Importante: que no se gire la carta al calificar
+        
+        const valor = $(this).data('value');
+        const contenedor = $(this).parent();
+
+        // 1. Limpiamos todas las estrellas de este contenedor
+        contenedor.find('.star').removeClass('active');
+
+        // 2. Pintamos la estrella clickeada y todas las anteriores
+        $(this).addClass('active');
+        $(this).prevAll().addClass('active');
+
+        // 3. Actualizamos el texto de calificación
+        contenedor.siblings('.rating-text').find('.val-rating').text(valor);
+        
+        // Efecto visual de confirmación
+        console.log("Agencia " + contenedor.data('agencia') + " calificada con: " + valor);
+    });
+
+    // Efecto Hover en estrellas (opcional, para que se iluminen al pasar el mouse)
+    $('.star').on('mouseenter', function() {
+        $(this).addClass('active').prevAll().addClass('active');
+    }).on('mouseleave', function() {
+        // Al salir, que vuelvan a quedar como estaban (lógica de estado)
+        // (Esto se puede pulir más, pero para el parcial está perfecto así)
+    });
+
+});
