@@ -113,3 +113,77 @@ $(document).ready(function() {
     });
 
 });
+
+$(document).ready(function() {
+    
+    // --- VALIDACIÓN EN TIEMPO REAL ---
+    $('#nombre, #email, #mensaje').on('input', function() {
+        const input = $(this);
+        const val = input.val().trim(); // Usamos trim() para ignorar espacios vacíos
+
+        if (input.attr('id') === 'nombre') {
+            // Ahora solo valida que no esté vacío
+            (val.length > 0) ? markValid(input) : markInvalid(input);
+        }
+
+        if (input.attr('id') === 'email') {
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            regex.test(val) ? markValid(input) : markInvalid(input);
+        }
+
+        if (input.attr('id') === 'mensaje') {
+            // Obligatorio: debe tener contenido
+            (val.length > 0) ? markValid(input) : markInvalid(input);
+        }
+    });
+
+    function markValid(el) {
+        el.addClass('is-valid').removeClass('is-invalid');
+    }
+
+    function markInvalid(el) {
+        el.addClass('is-invalid').removeClass('is-valid');
+    }
+
+    // --- ENVÍO DE FORMULARIO ---
+    $('#form-contacto').on('submit', function(e) {
+        e.preventDefault();
+
+        const nombre = $('#nombre').val().trim();
+        const email = $('#email').val().trim();
+        const mensaje = $('#mensaje').val().trim();
+
+        // CONTROL TÉCNICO: Si algún campo está vacío o es inválido
+        if (nombre === "" || email === "" || mensaje === "" || $('.is-invalid').length > 0) {
+            
+            // Forzamos el estado de error visual si intentó enviar vacío
+            if(nombre === "") markInvalid($('#nombre'));
+            if(email === "") markInvalid($('#email'));
+            if(mensaje === "") markInvalid($('#mensaje'));
+
+            alert("⚠️ Error: Todos los campos son obligatorios, incluyendo tu consulta.");
+            return; // Cortamos la ejecución aquí, no hay Spinner ni Modal
+        }
+
+        // Si pasó el control, procedemos con el envío
+        const btn = $('#btn-submit');
+        const spinner = $('#spinner-carga');
+        const btnText = $('.btn-text');
+
+        btn.prop('disabled', true);
+        btnText.text('Enviando...');
+        spinner.removeClass('d-none');
+
+        setTimeout(function() {
+            const myModal = new bootstrap.Modal(document.getElementById('modal-exito'));
+            myModal.show();
+
+            $('#form-contacto')[0].reset();
+            $('.form-control-custom').removeClass('is-valid is-invalid');
+            
+            btn.prop('disabled', false);
+            btnText.text('Enviar Mensaje');
+            spinner.addClass('d-none');
+        }, 2000);
+    });
+});
