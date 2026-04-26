@@ -714,123 +714,74 @@ main {
     }
 }
 
-/* --- PÁGINA DE PRECIOS (OPTIMIZADA) --- */
-
+/* --- PÁGINA DE PRECIOS --- */
 .precios-page {
-    padding-top: 80px; /* Subimos el contenido para que no quede tan lejos del navbar */
+    padding-top: 30px; /* Consistente con Agencias y Contacto */
     max-width: 1000px;
     margin: 0 auto;
-    text-align: center;
     padding-left: 20px;
     padding-right: 20px;
 }
 
-.precios-page h2 {
+/* El título ahora usa clases de Bootstrap en el HTML, pero mantenemos el color por si acaso */
+.color-primario {
     color: var(--color-primario);
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+}
+
+.color-secundario {
+    color: var(--color-secundario);
+}
+
+.bg-primario {
+    background-color: var(--color-primario) !important;
 }
 
 .tabla-wrapper {
-    margin-top: 30px;
-    overflow-x: auto; /* Mantiene la tabla navegable en celulares */
+    margin-top: 20px;
     background: white;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden; /* Para que los bordes redondeados corten la tabla */
 }
 
-.tabla-precios {
-    width: 100%;
-    border-collapse: collapse;
+/* --- HOVER DINÁMICO --- */
+/* Bootstrap ya tiene .table-hover, pero lo personalizamos para tu estilo visual */
+.tabla-precios tbody tr {
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.tabla-precios th,
-.tabla-precios td {
-    padding: 18px;
-    border-bottom: 1px solid #eee;
-    text-align: center;
-}
-
-.tabla-precios th {
-    background-color: var(--color-primario);
-    color: white;
-    font-size: 1.1rem;
-}
-
-/* Efecto de resaltado suave sin mover la tabla */
 .tabla-precios tbody tr:hover {
-    background-color: #fffaf4;
-    transition: background-color 0.2s;
+    background-color: #fff9f0 !important; /* Un naranja muy sutil de fondo */
+    cursor: default;
 }
 
+/* Resaltado de la fila de precios finales */
 .fila-precio {
-    font-weight: bold;
-    color: var(--color-primario);
-    font-size: 1.2rem;
+    border-top: 2px solid var(--color-secundario);
+    background-color: #fdfdfd;
 }
 
-/* --- TOOLTIPS CORREGIDOS (ALINEACIÓN IZQUIERDA PARA QUE NO SE SALGA) --- */
-
-.info-tooltip {
-    position: relative;
+/* Iconos de Tooltip */
+.bi-info-circle {
     cursor: help;
-    color: #555;
-    display: inline-block;
+    transition: color 0.2s;
 }
 
-.info-tooltip::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: 130%;
-    /* En lugar de left: 50%, lo alineamos al inicio del icono */
-    left: 0;
-    transform: translateY(10px); /* Quitamos el translateX(-50%) para que no se mueva a la izquierda */
+.bi-info-circle:hover {
+    color: var(--color-secundario) !important;
+}
 
-    background-color: #333;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 8px;
-    font-size: 0.85rem;
-
-    /* Manejo de ancho para que no se desborde */
-    min-width: 180px;
-    max-width: 250px;
-    white-space: normal; /* Permitimos que el texto use varias líneas si es largo */
-    line-height: 1.4;
-    text-align: left;
-
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    z-index: 100;
-    pointer-events: none;
+/* --- AJUSTES DE BOOTSTRAP TOOLTIP --- */
+/* Esto asegura que el tooltip de Bootstrap use tus colores si querés personalizarlo */
+.tooltip-inner {
+    background-color: #333 !important;
+    padding: 10px 15px !important;
+    border-radius: 8px !important;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* Triángulo del tooltip ajustado a la izquierda */
-.info-tooltip::before {
-    content: "";
-    position: absolute;
-    bottom: 115%;
-    left: 10px; /* Alineado con el inicio del texto */
-    border: 6px solid transparent;
-    border-top-color: #333;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease;
-    z-index: 100;
-}
-
-/* Activación */
-.info-tooltip:hover::after {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.info-tooltip:hover::before {
-    opacity: 1;
-    visibility: visible;
+.bs-tooltip-top .tooltip-arrow::before {
+    border-top-color: #333 !important;
 }
 
 /* --- BLOG "¿QUÉ PASA EN JUJUY?" (VERSIÓN FINAL CONSOLIDADA) --- */

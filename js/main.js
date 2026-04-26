@@ -187,3 +187,28 @@ $(document).ready(function() {
         }, 2000);
     });
 });
+
+$(document).ready(function() {
+    
+    // --- 1. ACTIVACIÓN DE TOOLTIPS (Bootstrap 5) ---
+    // Esta línea busca todos los elementos con data-bs-toggle="tooltip" y los activa
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    });
+
+    // --- 2. HOVER DINÁMICO EXTRA (Opcional con jQuery) ---
+    // Si querés que al pasar el mouse por una celda de precio, esta se agrande un poco
+    $('.tabla-precios td').hover(
+        function() {
+            if($(this).text().includes('$')) {
+                $(this).css({'color': 'var(--color-secundario)', 'transform': 'scale(1.1)', 'transition': '0.2s'});
+            }
+        }, 
+        function() {
+            if($(this).text().includes('$')) {
+                $(this).css({'color': 'var(--color-primario)', 'transform': 'scale(1)'});
+            }
+        }
+    );
+});

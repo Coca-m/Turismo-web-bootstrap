@@ -3,165 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Precios - Turismo Jujuy</title>
+     <title>Turismo Jujuy - Bootstrap & jQuery</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
 
     <header class="header">
-  <div class="logo">
-    <h1>Turismo Jujuy</h1>
-  </div>
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <i class="bi bi-mountain-fill me-2"></i> Turismo Jujuy
+      </a>
 
-  <nav class="navbar" aria-label="Menú principal">
-  <ul class="menu">
-    <li><a href="index.html">Inicio</a></li>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuTurismo" aria-controls="menuTurismo" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <li class="dropdown">
-      <a href="destinos.html">Destinos</a>
-      <div class="mega-menu">
-        <div class="mega-columna">
-          <h3>Lugares</h3>
-          <a href="destinos.html">Cerro de los 7 Colores</a>
-          <a href="destinos.html">Pucará de Tilcara</a>
-          <a href="destinos.html">Salinas Grandes</a>
-          <a href="destinos.html">Museo del Cabildo</a>
-          <a href="destinos.html">Valle de la Luna</a>
-          <a href="destinos.html">Iglesia de Uquía</a>
-        </div>
-        <div class="mega-columna">
-          <h3>Categorías</h3>
-          <a href="destinos.html">Naturaleza</a>
-          <a href="destinos.html">Cultural</a>
-          <a href="destinos.html">Gastronómico</a>
-        </div>
-        <div class="mega-columna">
-          <h3>Experiencias</h3>
-          <a href="destinos.html">Excursiones</a>
-          <a href="destinos.html">Trekking</a>
-          <a href="destinos.html">Fotografía</a>
-          <a href="destinos.html">Gastronomía Local</a>
-        </div>
+      <div class="collapse navbar-collapse" id="menuTurismo">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"><i class="bi bi-house-door me-1"></i>Inicio</a>
+          </li>
+
+          <li class="nav-item dropdown dropdown-mega position-static">
+            <a class="nav-link dropdown-toggle" href="#" id="dropDestinos" role="button" data-bs-toggle="dropdown">
+              <i class="bi bi-compass me-1"></i> Destinos
+            </a>
+            <div class="dropdown-menu w-100 shadow border-0 p-4">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h6 class="fw-bold text-primary">Lugares</h6>
+                    <a class="dropdown-item" href="destinos.html">Cerro de los 7 Colores</a>
+                    <a class="dropdown-item" href="destinos.html">Pucará de Tilcara</a>
+                    <a class="dropdown-item" href="destinos.html">Salinas Grandes</a>
+                    <a class="dropdown-item" href="destinos.html">Museo del Cabildo</a>
+                    <a class="dropdown-item" href="destinos.html">Valle de la Luna</a>
+                    <a class="dropdown-item" href="destinos.html">Iglesia de Uquía</a>
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="fw-bold text-primary">Categorías</h6>
+                    <a class="dropdown-item" href="destinos.html">Naturaleza</a>
+                    <a class="dropdown-item" href="destinos.html">Cultural</a>
+                    <a class="dropdown-item" href="destinos.html">Gastronómico</a>
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="fw-bold text-primary">Experiencias</h6>
+                    <a class="dropdown-item" href="destinos.html">Excursiones</a>
+                    <a class="dropdown-item" href="destinos.html">Trekking</a>
+                    <a class="dropdown-item" href="destinos.html">Fotografía</a>
+                    <a class="dropdown-item" href="destinos.html">Gastronomía Local</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown dropdown-mega position-static">
+            <a class="nav-link dropdown-toggle" href="#" id="dropAgencias" role="button" data-bs-toggle="dropdown">
+              <i class="bi bi-briefcase me-1"></i> Agencias
+            </a>
+            <div class="dropdown-menu w-100 shadow border-0 p-4">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h6 class="fw-bold text-primary">Servicios</h6>
+                    <a class="dropdown-item" href="agencias.html">Paquetes turísticos</a>
+                    <a class="dropdown-item" href="agencias.html">Traslados</a>
+                    <a class="dropdown-item" href="agencias.html">Hospedaje</a>
+                    <a class="dropdown-item" href="agencias.html">Guías locales</a>
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="fw-bold text-primary">Atención</h6>
+                    <a class="dropdown-item" href="agencias.html">Asesoramiento</a>
+                    <a class="dropdown-item" href="agencias.html">Promociones</a>
+                    <a class="dropdown-item" href="agencias.html">Viajes grupales</a>
+                    <a class="dropdown-item" href="agencias.html">Turismo personalizado</a>
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="fw-bold text-primary">Consultas</h6>
+                    <a class="dropdown-item" href="contacto.html">Contactar agencia</a>
+                    <a class="dropdown-item" href="contacto.html">Reservar</a>
+                    <a class="dropdown-item" href="contacto.html">Solicitar info</a>
+                    <a class="dropdown-item" href="contacto.html">Atención online</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown dropdown-mega position-static">
+            <a class="nav-link dropdown-toggle" href="#" id="dropPrecios" role="button" data-bs-toggle="dropdown">
+              <i class="bi bi-cash-stack me-1"></i> Precios
+            </a>
+            <div class="dropdown-menu w-100 shadow border-0 p-4">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h6 class="fw-bold text-primary">Planes</h6>
+                    <a class="dropdown-item" href="precios.html">Económico</a>
+                    <a class="dropdown-item" href="precios.html">Estándar</a>
+                    <a class="dropdown-item" href="precios.html">Premium</a>
+                    <a class="dropdown-item" href="precios.html">Familiar</a>
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="fw-bold text-primary">Incluye</h6>
+                    <a class="dropdown-item" href="precios.html">Hospedaje</a>
+                    <a class="dropdown-item" href="precios.html">Desayuno</a>
+                    <a class="dropdown-item" href="precios.html">Excursiones</a>
+                    <a class="dropdown-item" href="precios.html">Transporte</a>
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="fw-bold text-primary">Comparar</h6>
+                    <a class="dropdown-item" href="precios.html">Ver tabla</a>
+                    <a class="dropdown-item" href="precios.html">Ofertas</a>
+                    <a class="dropdown-item" href="precios.html">Promociones</a>
+                    <a class="dropdown-item" href="precios.html">Temporada alta</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="blog.html"><i class="bi bi-newspaper me-1"></i> Blog</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="contacto.html"><i class="bi bi-telephone me-1"></i> Contacto</a>
+          </li>
+        </ul>
       </div>
-    </li>
-
-    <li class="dropdown">
-      <a href="agencias.html">Agencias</a>
-      <div class="mega-menu">
-        <div class="mega-columna">
-          <h3>Servicios</h3>
-          <a href="agencias.html">Paquetes turísticos</a>
-          <a href="agencias.html">Traslados</a>
-          <a href="agencias.html">Hospedaje</a>
-          <a href="agencias.html">Guías locales</a>
-        </div>
-        <div class="mega-columna">
-          <h3>Atención</h3>
-          <a href="agencias.html">Asesoramiento</a>
-          <a href="agencias.html">Promociones</a>
-          <a href="agencias.html">Viajes grupales</a>
-          <a href="agencias.html">Turismo personalizado</a>
-        </div>
-        <div class="mega-columna">
-          <h3>Consultas</h3>
-          <a href="contacto.html">Contactar agencia</a>
-          <a href="contacto.html">Reservar</a>
-          <a href="contacto.html">Solicitar info</a>
-          <a href="contacto.html">Atención online</a>
-        </div>
-      </div>
-    </li>
-
-    <li class="dropdown">
-      <a href="precios.html">Precios</a>
-      <div class="mega-menu">
-        <div class="mega-columna">
-          <h3>Planes</h3>
-          <a href="precios.html">Económico</a>
-          <a href="precios.html">Estándar</a>
-          <a href="precios.html">Premium</a>
-          <a href="precios.html">Familiar</a>
-        </div>
-        <div class="mega-columna">
-          <h3>Incluye</h3>
-          <a href="precios.html">Hospedaje</a>
-          <a href="precios.html">Desayuno</a>
-          <a href="precios.html">Excursiones</a>
-          <a href="precios.html">Transporte</a>
-        </div>
-        <div class="mega-columna">
-          <h3>Comparar</h3>
-          <a href="precios.html">Ver tabla</a>
-          <a href="precios.html">Ofertas</a>
-          <a href="precios.html">Promociones</a>
-          <a href="precios.html">Temporada alta</a>
-        </div>
-      </div>
-    </li>
-
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="contacto.html">Contacto</a></li>
-  </ul>
+    </div>
 </nav>
 </header>
 
-    <main class="precios-page">
-        <section class="precios-container">
-            <h2>Comparador de Destinos</h2>
-            <p>Elegí la experiencia que mejor se adapte a tu aventura.</p>
+   <main class="precios-page py-5">
+    <div class="container">
+        <section class="precios-container text-center mb-5">
+            <h2 class="display-4 color-primario">Comparador de Destinos</h2>
+            <p class="lead">Elegí la experiencia que mejor se adapte a tu aventura en la Quebrada.</p>
+        </section>
 
-            <div class="tabla-wrapper">
-                <table class="tabla-precios">
-                    <thead>
+        <div class="tabla-wrapper shadow-lg rounded overflow-hidden">
+            <div class="table-responsive">
+                <table class="table table-hover tabla-precios mb-0">
+                    <thead class="bg-primario text-white">
                         <tr>
-                            <th>Servicios</th>
-                            <th>Purmamarca</th>
-                            <th>Tilcara</th>
-                            <th>Humahuaca</th>
+                            <th scope="col" class="py-4">Servicios</th>
+                            <th scope="col" class="py-4 text-center">Purmamarca</th>
+                            <th scope="col" class="py-4 text-center">Tilcara</th>
+                            <th scope="col" class="py-4 text-center">Humahuaca</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Guía Bilingüe</td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>✅</td>
+                            <td class="fw-bold">
+                                Guía Bilingüe 
+                                <i class="bi bi-info-circle ms-1 text-muted" 
+                                   data-bs-toggle="tooltip" 
+                                   data-bs-placement="top" 
+                                   title="Guías acreditados en Inglés y Francés"></i>
+                            </td>
+                            <td class="text-center text-success fs-4">✔</td>
+                            <td class="text-center text-success fs-4">✔</td>
+                            <td class="text-center text-success fs-4">✔</td>
                         </tr>
                         <tr>
-                            <td class="info-tooltip" data-tooltip="Incluye traslados desde el hotel">
-                                Transporte ⓘ
+                            <td class="fw-bold">
+                                Transporte
+                                <i class="bi bi-info-circle ms-1 text-muted" 
+                                   data-bs-toggle="tooltip" 
+                                   data-bs-placement="top" 
+                                   title="Traslados en combis con aire acondicionado"></i>
                             </td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>✅</td>
+                            <td class="text-center text-success fs-4">✔</td>
+                            <td class="text-center text-success fs-4">✔</td>
+                            <td class="text-center text-success fs-4">✔</td>
                         </tr>
                         <tr>
-                            <td class="info-tooltip" data-tooltip="Acceso a museos y sitios arqueológicos">
-                                Entradas ⓘ
+                            <td class="fw-bold">
+                                Entradas
+                                <i class="bi bi-info-circle ms-1 text-muted" 
+                                   data-bs-toggle="tooltip" 
+                                   data-bs-placement="top" 
+                                   title="Acceso al Pucará y museos regionales"></i>
                             </td>
-                            <td>❌</td>
-                            <td>✅</td>
-                            <td>✅</td>
+                            <td class="text-center text-danger fs-4">✘</td>
+                            <td class="text-center text-success fs-4">✔</td>
+                            <td class="text-center text-success fs-4">✔</td>
                         </tr>
                         <tr>
-                            <td class="info-tooltip" data-tooltip="Almuerzo completo en peña local">
-                                Gastronomía ⓘ
+                            <td class="fw-bold">
+                                Gastronomía
+                                <i class="bi bi-info-circle ms-1 text-muted" 
+                                   data-bs-toggle="tooltip" 
+                                   data-bs-placement="top" 
+                                   title="Almuerzo completo con menú regional"></i>
                             </td>
-                            <td>❌</td>
-                            <td>❌</td>
-                            <td>✅</td>
+                            <td class="text-center text-danger fs-4">✘</td>
+                            <td class="text-center text-danger fs-4">✘</td>
+                            <td class="text-center text-success fs-4">✔</td>
                         </tr>
-                        <tr class="fila-precio">
-                            <td>Precio Final</td>
-                            <td>$15.000</td>
-                            <td>$22.000</td>
-                            <td>$28.000</td>
+                        <tr class="fila-precio bg-light">
+                            <td class="fw-bold align-middle">Precio Final</td>
+                            <td class="text-center fw-bold fs-5 color-secundario">$15.000</td>
+                            <td class="text-center fw-bold fs-5 color-secundario">$22.000</td>
+                            <td class="text-center fw-bold fs-5 color-secundario">$28.000</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-        </section>
-    </main>
+        </div>
+        
+        <div class="text-center mt-4">
+            <p class="small text-muted">* Precios sujetos a cambios según temporada baja/alta.</p>
+        </div>
+    </div>
+</main>
+
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
 
     </body>
 </html>
