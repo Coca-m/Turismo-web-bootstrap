@@ -233,6 +233,60 @@
 
         </section> 
 
+
+        <section class="phishing-cta py-5 bg-dark text-white text-center">
+    <div class="container">
+        <h2 class="mb-3">¿Sabrías reconocer una estafa?</h2>
+        <p class="mb-4 text-light">Poné a prueba tus sentidos con nuestra simulación interactiva.</p>
+        <button type="button" class="btn btn-warning btn-lg fw-bold shadow" data-bs-toggle="modal" data-bs-target="#modalPhishing">
+            Simulación de Phishing
+        </button>
+    </div>
+</section>
+
+<div class="modal fade" id="modalPhishing" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content text-dark">
+            <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title">⚠️ ADVERTENCIA: Simulación Educativa</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-warning">
+                    <strong>¡Atención!</strong> Este es un correo falso de ejemplo. No ingreses datos reales. 
+                    Hacé clic en las 3 señales de fraude que encuentres.
+                </div>
+
+                <div class="phishing-mail-box border p-4 bg-light shadow-sm">
+                    <div class="mail-header border-bottom pb-2 mb-3">
+                        <p><strong>De:</strong> <span class="phishing-target" data-error="remitente">seguridad@banc0-oficial-jujuy.com.ar</span></p>
+                        <p><strong>Asunto:</strong> <span class="phishing-target" data-error="urgencia">¡URGENTE! Tu cuenta será bloqueada en 2 horas</span></p>
+                    </div>
+                    <div class="mail-body">
+                        <p>Estimado cliente,</p>
+                        <p>Hemos detectado un ingreso sospechoso desde otra provincia. Para evitar el bloqueo permanente de sus fondos, debe verificar su identidad ahora mismo.</p>
+                        <div class="text-center my-4">
+                            <button class="btn btn-primary phishing-target" data-error="enlace">VERIFICAR CUENTA AQUÍ</button>
+                        </div>
+                        <p>Si no realiza esta accion, su tarjeta sera inabilitada.</p>
+                    </div>
+                </div>
+
+                <div id="phishing-feedback" class="mt-4 d-none">
+                    <hr>
+                    <h5>🔍 Resultados del análisis:</h5>
+                    <ul id="feedback-list" class="list-group list-group-flush">
+                        </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" id="btn-revisar-phishing" class="btn btn-success">Verificar mis aciertos</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <section class="comentarios-box container mt-5">
     <h3 class="mb-4">Comunidad Jujeña</h3>
     

@@ -261,3 +261,47 @@ $(document).ready(function() {
         observer.observe(this);
     });
 });
+
+$(document).ready(function() {
+    let erroresEncontrados = new Set();
+
+    // 1. Marcar errores al hacer clic
+    $('.phishing-target').on('click', function() {
+        $(this).toggleClass('selected');
+        const errorType = $(this).data('error');
+
+        if ($(this).hasClass('selected')) {
+            erroresEncontrados.add(errorType);
+        } else {
+            erroresEncontrados.delete(errorType);
+        }
+    });
+
+    // 2. Lógica de Feedback
+    $('#btn-revisar-phishing').on('click', function() {
+        const totalErrores = 3;
+        const lista = $('#feedback-list');
+        lista.empty();
+        $('#phishing-feedback').removeClass('d-none');
+
+        // Explicación de los errores
+        const explicaciones = {
+            remitente: "❌ <strong>Remitente falso:</strong> El dominio 'banc0-oficial' usa un '0' en lugar de 'o'. Los bancos reales nunca usan dominios extraños.",
+            urgencia: "❌ <strong>Sentido de urgencia:</strong> Las amenazas de bloqueo inmediato son tácticas para que no pienses y actúes rápido.",
+            enlace: "❌ <strong>Enlace sospechoso:</strong> Al pasar el mouse por un botón, siempre debés mirar la URL abajo. Nunca pidas datos por botones externos."
+        };
+
+        // Generar feedback
+        erroresEncontrados.forEach(error => {
+            lista.append(`<li class="list-group-item list-group-item-success">${explicaciones[error]}</li>`);
+        });
+
+        if (erroresEncontrados.size === 0) {
+            alert("No marcaste ningún error. ¡Volvé a revisar el correo!");
+        } else if (erroresEncontrados.size === totalErrores) {
+            alert("¡Excelente! Sos un experto detectando fraudes.");
+        } else {
+            alert(`Encontraste ${erroresEncontrados.size} de ${totalErrores} señales. ¡Seguí buscando!`);
+        }
+    });
+});
