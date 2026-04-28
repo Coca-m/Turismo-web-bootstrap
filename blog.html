@@ -3,203 +3,286 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¿Qué pasa en Jujuy? - Noticias</title>
+    <title>Turismo Jujuy - Bootstrap & jQuery</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
 
     <header class="header">
-  <div class="logo">
-    <h1>Turismo Jujuy</h1>
-  </div>
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <i class="bi bi-mountain-fill me-2"></i> Turismo Jujuy
+      </a>
 
-  <nav class="navbar" aria-label="Menú principal">
-  <ul class="menu">
-    <li><a href="index.html">Inicio</a></li>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuTurismo" aria-controls="menuTurismo" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <li class="dropdown">
-      <a href="destinos.html">Destinos</a>
-      <div class="mega-menu">
-        <div class="mega-columna">
-          <h3>Lugares</h3>
-          <a href="destinos.html">Cerro de los 7 Colores</a>
-          <a href="destinos.html">Pucará de Tilcara</a>
-          <a href="destinos.html">Salinas Grandes</a>
-          <a href="destinos.html">Museo del Cabildo</a>
-          <a href="destinos.html">Valle de la Luna</a>
-          <a href="destinos.html">Iglesia de Uquía</a>
-        </div>
-        <div class="mega-columna">
-          <h3>Categorías</h3>
-          <a href="destinos.html">Naturaleza</a>
-          <a href="destinos.html">Cultural</a>
-          <a href="destinos.html">Gastronómico</a>
-        </div>
-        <div class="mega-columna">
-          <h3>Experiencias</h3>
-          <a href="destinos.html">Excursiones</a>
-          <a href="destinos.html">Trekking</a>
-          <a href="destinos.html">Fotografía</a>
-          <a href="destinos.html">Gastronomía Local</a>
-        </div>
+      <div class="collapse navbar-collapse" id="menuTurismo">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"><i class="bi bi-house-door me-1"></i>Inicio</a>
+          </li>
+
+          <li class="nav-item dropdown dropdown-mega position-static">
+            <a class="nav-link dropdown-toggle" href="#" id="dropDestinos" role="button" data-bs-toggle="dropdown">
+              <i class="bi bi-compass me-1"></i> Destinos
+            </a>
+            <div class="dropdown-menu w-100 shadow border-0 p-4">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h6 class="fw-bold text-primary">Lugares</h6>
+                    <a class="dropdown-item" href="destinos.html">Cerro de los 7 Colores</a>
+                    <a class="dropdown-item" href="destinos.html">Pucará de Tilcara</a>
+                    <a class="dropdown-item" href="destinos.html">Salinas Grandes</a>
+                    <a class="dropdown-item" href="destinos.html">Museo del Cabildo</a>
+                    <a class="dropdown-item" href="destinos.html">Valle de la Luna</a>
+                    <a class="dropdown-item" href="destinos.html">Iglesia de Uquía</a>
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="fw-bold text-primary">Categorías</h6>
+                    <a class="dropdown-item" href="destinos.html">Naturaleza</a>
+                    <a class="dropdown-item" href="destinos.html">Cultural</a>
+                    <a class="dropdown-item" href="destinos.html">Gastronómico</a>
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="fw-bold text-primary">Experiencias</h6>
+                    <a class="dropdown-item" href="destinos.html">Excursiones</a>
+                    <a class="dropdown-item" href="destinos.html">Trekking</a>
+                    <a class="dropdown-item" href="destinos.html">Fotografía</a>
+                    <a class="dropdown-item" href="destinos.html">Gastronomía Local</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown dropdown-mega position-static">
+            <a class="nav-link dropdown-toggle" href="#" id="dropAgencias" role="button" data-bs-toggle="dropdown">
+              <i class="bi bi-briefcase me-1"></i> Agencias
+            </a>
+            <div class="dropdown-menu w-100 shadow border-0 p-4">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h6 class="fw-bold text-primary">Servicios</h6>
+                    <a class="dropdown-item" href="agencias.html">Paquetes turísticos</a>
+                    <a class="dropdown-item" href="agencias.html">Traslados</a>
+                    <a class="dropdown-item" href="agencias.html">Hospedaje</a>
+                    <a class="dropdown-item" href="agencias.html">Guías locales</a>
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="fw-bold text-primary">Atención</h6>
+                    <a class="dropdown-item" href="agencias.html">Asesoramiento</a>
+                    <a class="dropdown-item" href="agencias.html">Promociones</a>
+                    <a class="dropdown-item" href="agencias.html">Viajes grupales</a>
+                    <a class="dropdown-item" href="agencias.html">Turismo personalizado</a>
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="fw-bold text-primary">Consultas</h6>
+                    <a class="dropdown-item" href="contacto.html">Contactar agencia</a>
+                    <a class="dropdown-item" href="contacto.html">Reservar</a>
+                    <a class="dropdown-item" href="contacto.html">Solicitar info</a>
+                    <a class="dropdown-item" href="contacto.html">Atención online</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown dropdown-mega position-static">
+            <a class="nav-link dropdown-toggle" href="#" id="dropPrecios" role="button" data-bs-toggle="dropdown">
+              <i class="bi bi-cash-stack me-1"></i> Precios
+            </a>
+            <div class="dropdown-menu w-100 shadow border-0 p-4">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h6 class="fw-bold text-primary">Planes</h6>
+                    <a class="dropdown-item" href="precios.html">Económico</a>
+                    <a class="dropdown-item" href="precios.html">Estándar</a>
+                    <a class="dropdown-item" href="precios.html">Premium</a>
+                    <a class="dropdown-item" href="precios.html">Familiar</a>
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="fw-bold text-primary">Incluye</h6>
+                    <a class="dropdown-item" href="precios.html">Hospedaje</a>
+                    <a class="dropdown-item" href="precios.html">Desayuno</a>
+                    <a class="dropdown-item" href="precios.html">Excursiones</a>
+                    <a class="dropdown-item" href="precios.html">Transporte</a>
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="fw-bold text-primary">Comparar</h6>
+                    <a class="dropdown-item" href="precios.html">Ver tabla</a>
+                    <a class="dropdown-item" href="precios.html">Ofertas</a>
+                    <a class="dropdown-item" href="precios.html">Promociones</a>
+                    <a class="dropdown-item" href="precios.html">Temporada alta</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="blog.html"><i class="bi bi-newspaper me-1"></i> Blog</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="contacto.html"><i class="bi bi-telephone me-1"></i> Contacto</a>
+          </li>
+        </ul>
       </div>
-    </li>
-
-    <li class="dropdown">
-      <a href="agencias.html">Agencias</a>
-      <div class="mega-menu">
-        <div class="mega-columna">
-          <h3>Servicios</h3>
-          <a href="agencias.html">Paquetes turísticos</a>
-          <a href="agencias.html">Traslados</a>
-          <a href="agencias.html">Hospedaje</a>
-          <a href="agencias.html">Guías locales</a>
-        </div>
-        <div class="mega-columna">
-          <h3>Atención</h3>
-          <a href="agencias.html">Asesoramiento</a>
-          <a href="agencias.html">Promociones</a>
-          <a href="agencias.html">Viajes grupales</a>
-          <a href="agencias.html">Turismo personalizado</a>
-        </div>
-        <div class="mega-columna">
-          <h3>Consultas</h3>
-          <a href="contacto.html">Contactar agencia</a>
-          <a href="contacto.html">Reservar</a>
-          <a href="contacto.html">Solicitar info</a>
-          <a href="contacto.html">Atención online</a>
-        </div>
-      </div>
-    </li>
-
-    <li class="dropdown">
-      <a href="precios.html">Precios</a>
-      <div class="mega-menu">
-        <div class="mega-columna">
-          <h3>Planes</h3>
-          <a href="precios.html">Económico</a>
-          <a href="precios.html">Estándar</a>
-          <a href="precios.html">Premium</a>
-          <a href="precios.html">Familiar</a>
-        </div>
-        <div class="mega-columna">
-          <h3>Incluye</h3>
-          <a href="precios.html">Hospedaje</a>
-          <a href="precios.html">Desayuno</a>
-          <a href="precios.html">Excursiones</a>
-          <a href="precios.html">Transporte</a>
-        </div>
-        <div class="mega-columna">
-          <h3>Comparar</h3>
-          <a href="precios.html">Ver tabla</a>
-          <a href="precios.html">Ofertas</a>
-          <a href="precios.html">Promociones</a>
-          <a href="precios.html">Temporada alta</a>
-        </div>
-      </div>
-    </li>
-
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="contacto.html">Contacto</a></li>
-  </ul>
+    </div>
 </nav>
 </header>
 
-    <main class="blog-revista">
-        <header class="blog-header">
-            <h1 class="diario-logo">¿Qué pasa en Jujuy?</h1>
-            <div class="diario-fecha" id="fecha-actual"></div>
+   <main class="blog-revista py-5">
+    <div class="container">
+        <header class="blog-header text-center mb-5 border-bottom pb-4">
+            <h1 class="diario-logo display-3 fw-bold">¿Qué pasa en Jujuy?</h1>
+            <div class="diario-fecha text-uppercase text-muted fw-bold" id="fecha-actual"></div>
         </header>
 
-        <div class="filter-section">
-            <input type="radio" name="f" id="all" checked>
-            <input type="radio" name="f" id="cultura">
-            <input type="radio" name="f" id="aventura">
-            <input type="radio" name="f" id="gastronomia">
-
-            <div class="filter-labels">
-                <label for="all">TODO</label>
-                <label for="cultura">Cultura</label>
-                <label for="aventura">Aventura</label>
-                <label for="gastronomia">Gastronomía</label>
+        <div class="filter-section text-center mb-5">
+            <div class="btn-group shadow-sm rounded-pill overflow-hidden" role="group">
+                <button type="button" class="btn btn-filter active" data-filter="all">TODO</button>
+                <button type="button" class="btn btn-filter" data-filter="cultura">Cultura</button>
+                <button type="button" class="btn btn-filter" data-filter="aventura">Aventura</button>
+                <button type="button" class="btn btn-filter" data-filter="gastronomia">Gastronomía</button>
             </div>
-
-            <section class="revista-grid">
-               <article class="principal art-card cultura">
-              <div style="width: 100%; height: 100%; display: flex; flex-direction: column;">
-              <div class="art-img" style="background-image: url('img/blog/tradiciones.jpg'); width: 100%;"></div>
-            <div class="art-body" style="width: 100%;">
-            <span class="tag">Cultura</span>
-            <h2>El renacer de la Puna: Tradiciones milenarias</h2>
-            <p>Una mirada profunda a los rituales que definen nuestra identidad en lo más alto de Jujuy.</p>
-            <span class="autor">Por: Julián M.</span>
-          </div>
-      </div>
-  </article>
-
-                <article class="art-card aventura reveal">
-                    <div class="art-img" style="background-image: url('img/blog/yungas.jpg')"></div>
-                    <div class="art-body">
-                        <span class="tag">Aventura</span>
-                        <h3>Trekking en las Nubes</h3>
-                        <p>Explorando los senderos menos conocidos de las Yungas jujeñas, un viaje entre la selva y el cielo.</p>
-                    </div>
-                </article>
-
-                <article class="art-card cultura reveal">
-                    <div class="art-img" style="background-image: url('img/blog/pena.jpg')"></div>
-                    <div class="art-body">
-                        <span class="tag">Cultura</span>
-                        <h3>Noches de Peñas en Tilcara</h3>
-                        <p>Donde la música andina y el vino de altura se encuentran bajo el cielo estrellado de la Quebrada.</p>
-                    </div>
-                </article>
-
-                <article class="art-card gastronomia reveal">
-                    <div class="art-img" style="background-image: url('img/blog/bodega.jpg')"></div>
-                    <div class="art-body">
-                        <span class="tag">Gastronomía</span>
-                        <h3>El auge del vino de altura</h3>
-                        <p>Bodegas locales ganan terreno en el mercado mundial con uvas cosechadas a más de 2500 msnm.</p>
-                    </div>
-                </article>
-
-                <article class="art-card cultura reveal">
-                    <div class="art-img" style="background-image: url('img/blog/Casabindo.jpg')"></div>
-                    <div class="art-body">
-                        <span class="tag">Cultura</span>
-                        <h3>Inauguran museo en Casabindo</h3>
-                        <p>La tecnología llega a la Puna para contar la historia del Toreo de la Vincha de forma inmersiva.</p>
-                    </div>
-                </article>
-
-                <article class="art-card gastronomia reveal">
-                    <div class="art-img" style="background-image: url('img/blog/humita.jpg')"></div>
-                    <div class="art-body">
-                        <span class="tag">Gastronomía</span>
-                        <h3>El secreto de la Humita Jujeña</h3>
-                        <p>Productores locales revelan las técnicas ancestrales para lograr el sabor único del Valle.</p>
-                    </div>
-                </article>
-            </section>
         </div>
 
-        <section class="comentarios-box">
-            <h3>Comunidad Jujeña</h3>
-            <div class="comentario reveal"><div class="avatar-css"></div><div class="comentario-content"><strong>Marcos Torres</strong><p>¡Increíble artículo! Me dieron ganas de volver a la Puna.</p></div></div>
-            <div class="comentario reveal"><div class="avatar-css avatar-c2"></div><div class="comentario-content"><strong>Lucía Méndez</strong><p>El trekking en las Yungas es una experiencia que todos deberían hacer una vez.</p></div></div>
-            <div class="comentario reveal"><div class="avatar-css avatar-c3"></div><div class="comentario-content"><strong>Roberto S.</strong><p>¿Alguien sabe si las peñas en Tilcara abren los lunes?</p></div></div>
-            <div class="comentario reveal"><div class="avatar-css avatar-c4"></div><div class="comentario-content"><strong>Martina Díaz</strong><p>Los vinos de Jujuy son, por lejos, mis favoritos del país.</p></div></div>
-            <div class="comentario reveal"><div class="avatar-css avatar-c5"></div><div class="comentario-content"><strong>Andrés F.</strong><p>¡Excelente información! Muy completo el blog.</p></div></div>
-        </section>
-    </main>
+        <section class="revista-grid">
+            <article class="art-card principal cultura reveal">
+                <div class="row g-0">
+                    <div class="col-md-8">
+                        <div class="art-img" style="background-image: url('img/blog/tradiciones.jpg'); min-height: 400px;"></div>
+                    </div>
+                    <div class="col-md-4 d-flex align-items-center">
+                        <div class="art-body p-4">
+                            <span class="tag mb-2 d-inline-block">Cultura</span>
+                            <h2 class="h1">El renacer de la Puna: Tradiciones milenarias</h2>
+                            <p>Una mirada profunda a los rituales que definen nuestra identidad en lo más alto de Jujuy.</p>
+                            <span class="autor fst-italic">Por: Julián M.</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
 
-    <script>
-        document.getElementById('fecha-actual').innerText = new Date().toLocaleDateString('es-AR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    </script>
+            <div class="row row-cols-1 row-cols-md-3 g-4 mt-2">
+                <div class="col filter-item aventura">
+                    <article class="art-card h-100 reveal">
+                        <div class="art-img" style="background-image: url('img/blog/yungas.jpg')"></div>
+                        <div class="art-body p-3">
+                            <span class="tag">Aventura</span>
+                            <h3>Trekking en las Nubes</h3>
+                            <p>Explorando los senderos menos conocidos de las Yungas jujeñas.</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col filter-item cultura">
+                    <article class="art-card h-100 reveal">
+                        <div class="art-img" style="background-image: url('img/blog/pena.jpg')"></div>
+                        <div class="art-body p-3">
+                            <span class="tag">Cultura</span>
+                            <h3>Noches de Peñas en Tilcara</h3>
+                            <p>Música andina y vino de altura bajo el cielo estrellado.</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col filter-item gastronomia">
+                    <article class="art-card h-100 reveal">
+                        <div class="art-img" style="background-image: url('img/blog/bodega.jpg')"></div>
+                        <div class="art-body p-3">
+                            <span class="tag">Gastronomía</span>
+                            <h3>El auge del vino de altura</h3>
+                            <p>Bodegas locales ganan terreno en el mercado mundial.</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col filter-item cultura">
+                    <article class="art-card h-100 reveal">
+                        <div class="art-img" style="background-image: url('img/blog/Casabindo.jpg')"></div>
+                        <div class="art-body p-3">
+                            <span class="tag">Cultura</span>
+                            <h3>Inauguran museo en Casabindo</h3>
+                            <p>Tecnología inmersiva para contar la historia del Toreo de la Vincha.</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col filter-item gastronomia">
+                    <article class="art-card h-100 reveal">
+                        <div class="art-img" style="background-image: url('img/blog/humita.jpg')"></div>
+                        <div class="art-body p-3">
+                            <span class="tag">Gastronomía</span>
+                            <h3>El secreto de la Humita Jujeña</h3>
+                            <p>Técnicas ancestrales para lograr el sabor único del Valle.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        </section> 
+
+<section class="comentarios-box container mt-5">
+    <h3 class="mb-4">Comunidad Jujeña</h3>
+    
+    <div class="comentario reveal">
+        <div class="avatar-css"></div>
+        <div class="comentario-content">
+            <strong>Marcos Torres</strong>
+            <p>¡Increíble artículo! Me dieron ganas de volver a la Puna.</p>
+        </div>
+    </div>
+
+    <div class="comentario reveal">
+        <div class="avatar-css avatar-c2"></div>
+        <div class="comentario-content">
+            <strong>Lucía Méndez</strong>
+            <p>El trekking en las Yungas es una experiencia que todos deberían hacer una vez.</p>
+        </div>
+    </div>
+
+    <div class="comentario reveal">
+        <div class="avatar-css avatar-c3"></div>
+        <div class="comentario-content">
+            <strong>Roberto S.</strong>
+            <p>¿Alguien sabe si las peñas en Tilcara abren los lunes?</p>
+        </div>
+    </div>
+
+    <div class="comentario reveal">
+        <div class="avatar-css avatar-c4"></div>
+        <div class="comentario-content">
+            <strong>Martina Díaz</strong>
+            <p>Los vinos de Jujuy son, por lejos, mis favoritos del país.</p>
+        </div>
+    </div>
+
+    <div class="comentario reveal">
+        <div class="avatar-css avatar-c5"></div>
+        <div class="comentario-content">
+            <strong>Andrés F.</strong>
+            <p>¡Excelente información! Muy completo el blog.</p>
+        </div>
+    </div>
+</section>
+    </div>
+</main>
+
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+
+    
 </body>
 </html>

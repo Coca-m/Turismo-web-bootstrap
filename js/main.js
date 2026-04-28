@@ -212,3 +212,52 @@ $(document).ready(function() {
         }
     );
 });
+
+$(document).ready(function() {
+
+    // --- 1. FECHA ACTUAL ---
+    const fechaElemento = $('#fecha-actual');
+    if (fechaElemento.length) {
+        const opciones = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        fechaElemento.text(new Date().toLocaleDateString('es-AR', opciones));
+    }
+
+    // --- 2. FILTRADO LÓGICO ---
+    $('.btn-filter').on('click', function() {
+        const categoria = $(this).data('filter');
+
+        // UI: Cambiar estado activo del botón
+        $('.btn-filter').removeClass('active');
+        $(this).addClass('active');
+
+        if (categoria === 'all') {
+            // Mostramos todo
+            $('.art-card.principal').fadeIn(400);
+            $('.filter-item').fadeIn(400);
+        } else {
+            // A) Noticia Principal: Se muestra solo si tiene la clase
+            if ($('.art-card.principal').hasClass(categoria)) {
+                $('.art-card.principal').fadeIn(400);
+            } else {
+                $('.art-card.principal').hide();
+            }
+
+            // B) Noticias de la Grilla (filter-item)
+            $('.filter-item').hide(); // Escondemos todas las columnas
+            $('.filter-item.' + categoria).fadeIn(400); // Mostramos las que coincidan
+        }
+    });
+
+    // --- 3. ANIMACIÓN REVEAL (Intersection Observer) ---
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                $(entry.target).addClass('active');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    $('.reveal').each(function() {
+        observer.observe(this);
+    });
+});

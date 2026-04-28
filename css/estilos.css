@@ -164,9 +164,9 @@ main {
 }
 
 /* --- SECCIÓN CONTADORES (LIMPIA) --- */
-.estadisticas {
+/* .estadisticas {
   /* El color de fondo y padding ya los pusimos con clases de Bootstrap en el HTML */
-}
+/* } */
 
 .numero {
   /* Bootstrap ya nos da el tamaño con display-4, pero podemos reforzarlo */
@@ -784,10 +784,10 @@ main {
     border-top-color: #333 !important;
 }
 
-/* --- BLOG "¿QUÉ PASA EN JUJUY?" (VERSIÓN FINAL CONSOLIDADA) --- */
-
+/* --- BLOG "¿QUÉ PASA EN JUJUY?" --- */
+/* --- BLOG "¿QUÉ PASA EN JUJUY?" --- */
 .blog-revista {
-    padding-top: 80px;
+    padding-top: 30px;
     max-width: 1200px;
     margin: 0 auto;
     padding-bottom: 100px;
@@ -811,39 +811,38 @@ main {
     margin-bottom: 40px;
 }
 
-.filter-section { width: 100%; }
-
-.filter-labels {
-    margin: 20px 0;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-    padding: 15px 0;
-    text-align: center;
+/* --- SECCIÓN DE FILTROS (Actualizado para el nuevo HTML) --- */
+.filter-section {
+    margin-bottom: 3rem;
 }
 
-.filter-labels label {
-    margin: 0 15px;
+.btn-filter {
+    background: #f8f9fa;
+    border: none;
+    padding: 12px 30px;
     font-weight: bold;
-    cursor: pointer;
+    color: #555;
     text-transform: uppercase;
     font-size: 0.85rem;
-    transition: color 0.3s;
-    color: #555;
+    transition: all 0.3s ease;
 }
 
-/* --- GRILLA PRINCIPAL --- */
+.btn-filter.active {
+    background: var(--color-primario) !important;
+    color: white !important;
+}
+
+.btn-filter:hover {
+    background: #e9ecef;
+    color: var(--color-primario);
+}
+
+/* --- ESTRUCTURA DE NOTICIAS --- */
+/* Eliminamos el 'grid' manual para que las clases 'row' de Bootstrap funcionen */
 .revista-grid {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    /* Creamos filas automáticas pequeñas para que las noticias se acomoden mejor */
-    grid-auto-rows: min-content;
-    gap: 30px;
-    width: 100% !important;
-    grid-auto-flow: dense !important; /* Obligatorio para rellenar huecos */
-    align-items: start;
+    display: block !important; 
 }
 
-/* --- TARJETA BASE (Mantenemos tus efectos originales) --- */
 .art-card {
     background: #fff;
     border: 1px solid #eee;
@@ -853,6 +852,7 @@ main {
     cursor: pointer;
     display: flex;
     flex-direction: column;
+    height: 100%; /* Para que todas las de la misma fila midan igual */
 }
 
 .art-card:hover {
@@ -861,76 +861,38 @@ main {
     border-color: var(--color-primario);
 }
 
-/* --- LA NOTICIA PRINCIPAL (ESTILO NEWSLETTER) --- */
+/* NOTICIA PRINCIPAL (Ajuste para el diseño horizontal) */
 .art-card.principal {
-    grid-column: 1 / 3 !important;
-    grid-row: span 2 !important; /* Volvemos a poner el span 2 para reservar el hueco derecho */
-    height: auto !important;
+    margin-bottom: 40px;
+    border-left: 8px solid var(--color-primario);
 }
 
 .art-img {
     width: 100%;
-    height: 220px;
     background-size: cover;
     background-position: center;
     transition: transform 0.6s ease;
 }
 
-/* Imagen más grande para la portada */
+/* Tamaños de imagen corregidos para que no se estiren */
 .art-card.principal .art-img {
-    height: 520px !important; /* Aumentamos aquí para cerrar el espacio blanco */
-    width: 100% !important;
+    height: 100% !important;
+    min-height: 400px;
 }
 
-.art-card:not(.principal) {
-    grid-row: span 1; /* Ocupan solo un lugar */
-    height: auto !important;
+.filter-item .art-img {
+    height: 200px !important;
 }
 
-/* Esto afecta a todas las noticias MENOS a la principal */
-.art-card:not(.principal) .art-body {
-    flex-grow: 0;
-    padding: 15px; /* Les damos un poquito menos de espacio interno para que quepan mejor */
-}
-
-/* Y esto asegura que la imagen de las chiquitas no se estire raro */
-.art-card:not(.principal) .art-img {
-    height: 160px !important; /* Un poco más bajas para ayudar al equilibrio */
-}
-
-.art-card:hover .art-img { transform: scale(1.08); }
+.art-card:hover .art-img { transform: scale(1.05); }
 
 .art-body {
     padding: 20px;
     flex-grow: 1;
-    box-sizing: border-box;
 }
 
-.art-card.principal .tag {
-    align-self: flex-start; /* Hace que el tag solo ocupe su ancho de texto */
-    margin-bottom: 15px;    /* Separa el tag del título */
-    font-size: 0.8rem;      /* Un poquito más grande para la principal */
-}
-
-.art-card.principal .art-body {
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Alinea todo al principio */
-}
-
-.art-card.principal .autor {
-    margin-top: auto; /* Empuja el nombre del autor al final si sobra espacio */
-    padding-top: 10px;
-    font-size: 0.85rem;
-    color: #888;
-}
-
-
-/* Títulos diferenciados */
-.art-card h3, .art-card h2 { margin: 10px 0; line-height: 1.2; }
-.art-card.principal h2 { font-size: 2.2rem; }
-
+/* ELEMENTOS DE TEXTO */
+.art-card h3, .art-card h2 { margin: 10px 0; line-height: 1.2; font-family: 'Playfair Display', serif; }
 .tag {
     background: var(--color-primario);
     color: #fff;
@@ -939,29 +901,14 @@ main {
     font-weight: bold;
     border-radius: 4px;
     display: inline-block;
+    margin-bottom: 10px;
 }
 
-/* --- FILTRADO --- */
-input[type="radio"] { display: none; }
-
-#cultura:checked ~ .revista-grid article:not(.cultura),
-#aventura:checked ~ .revista-grid article:not(.aventura),
-#gastronomia:checked ~ .revista-grid article:not(.gastronomia) {
-    display: none;
-}
-
-#cultura:checked ~ .filter-labels label[for="cultura"],
-#aventura:checked ~ .filter-labels label[for="aventura"],
-#gastronomia:checked ~ .filter-labels label[for="gastronomia"],
-#all:checked ~ .filter-labels label[for="all"] {
-    color: var(--color-primario);
-}
-
-/* --- ANIMACIONES --- */
+/* --- ANIMACIONES REVEAL --- */
 .reveal {
     opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease-out;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
 }
 
 .reveal.active {
@@ -969,19 +916,21 @@ input[type="radio"] { display: none; }
     transform: translateY(0);
 }
 
-/* --- COMENTARIOS Y AVATARES (Diseño original respetado) --- */
+/* --- COMENTARIOS (Intactos como pediste) --- */
 .comentarios-box {
-    margin-top: 60px;
-    border-top: 2px solid #eee;
-    padding-top: 40px;
+    display: block !important;
+    clear: both;
+    width: 100%;
+    max-width: 900px;
+    margin: 60px auto 0 auto;
 }
 
 .comentario {
-    display: flex;
-    gap: 15px;
-    margin: 25px 0;
+    display: flex !important;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    background: #f9f9f9;
     padding: 20px;
-    background: #fdfdfd;
     border-radius: 12px;
     border-left: 5px solid var(--color-primario);
 }
@@ -993,6 +942,7 @@ input[type="radio"] { display: none; }
     position: relative;
     overflow: hidden;
     flex-shrink: 0;
+    margin-right: 15px;
 }
 
 .avatar-css::before {
@@ -1014,5 +964,71 @@ input[type="radio"] { display: none; }
 .avatar-c4 { background: #ebf5fb; } .avatar-c4::before, .avatar-c4::after { background: #3498db; }
 .avatar-c5 { background: #f4ecf7; } .avatar-c5::before, .avatar-c5::after { background: #8e44ad; }
 
-.comentario-content strong { display: block; margin-bottom: 5px; }
-.comentario-content p { color: #666; font-size: 0.95rem; }
+/* --- RESPONSIVE DESIGN (Media Queries) --- */
+
+/* Tablets (Pantallas menores a 992px) */
+@media (max-width: 992px) {
+    .diario-logo {
+        font-size: 2.5rem; /* Achicamos el logo para que no ocupe toda la pantalla */
+    }
+
+    .art-card.principal .art-img {
+        min-height: 300px; /* Reducimos la altura de la imagen principal */
+    }
+
+    /* En tablets, las noticias de abajo pasan de 3 columnas a 2 */
+    .row-cols-md-3 > * {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+}
+
+/* Celulares (Pantallas menores a 768px) */
+@media (max-width: 768px) {
+    .blog-revista {
+        padding-top: 15px;
+    }
+
+    .diario-logo {
+        font-size: 2rem;
+    }
+
+    /* Los botones de filtro suelen romperse en celus, los hacemos scrolleables o apilados */
+    .btn-group {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        border-radius: 10px !important;
+    }
+
+    .btn-filter {
+        padding: 8px 15px;
+        font-size: 0.75rem;
+        flex: 1 1 auto; /* Que ocupen el ancho necesario */
+    }
+
+    /* La noticia principal deja de ser horizontal y pasa a ser vertical */
+    .art-card.principal .row {
+        flex-direction: column;
+    }
+
+    .art-card.principal .col-md-8, 
+    .art-card.principal .col-md-4 {
+        width: 100%;
+    }
+
+    /* Todas las noticias secundarias pasan a ocupar el 100% del ancho (1 sola columna) */
+    .row-cols-md-3 > * {
+        width: 100%;
+    }
+
+    /* Ajuste de comentarios para pantallas chicas */
+    .comentario {
+        padding: 15px;
+    }
+
+    .avatar-css {
+        width: 40px;
+        height: 40px;
+    }
+}
